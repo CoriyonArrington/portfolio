@@ -4,53 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coriyon Arrington | About</title>
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/style-about.css">
+    <script src="https://kit.fontawesome.com/58e13ba0ad.js" crossorigin="anonymous"></script>
 </head>
-<body style="background-image: url('/images/about-me.png'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;"> <!-- this adds the background image for now but will be moved/styled in css later -->
+<body>
+    <div class="container">
 
-    <!-- this is the nav bar -->
-    <nav>
-        <ul>
-            <li><a href="/index.html"><img src="/images/avatar.png" alt="avatar"></a></li>
-            <li><a href="/index.html#work">Work</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/index.html#contact">Contact</a></li>   
-        </ul>
-    </nav>
+        <!-- this is the nav bar -->
+        <div class="navbar">
+            <img id="avatar" src="/images/avatar.png" alt="avatar">
+            <nav id="nav-menu">
+                <ul id="menu">
+                    <li><a class="menu-text" href="/index.html#work">Work</a></li>
+                    <li><a class="menu-text" href="/about.html">About</a></li>
+                    <li><a class="menu-text" href="/index.html#contact">Contact</a></li>   
+                </ul>
+            </nav>
+        </div>
 
-    <h1>About Me</h1>
+        <!-- this section starts off my background -->
+        <section>
+            <!-- <h1>About Me</h1> -->
+            <h1>Back to where it all began.
+            </h1>
+            <p>Introduction to Engineering Design. That’s where it all started for me. It was a class taught by one of my favorite professors, Dr. Howard. He was on the team that created SolidWorks, a computer-aided design program that millions of people use. For the first time in my life, I was starting to understand that everything around me had to go through a design process. I was doing that by creating 3D models in SolidWorks. Coolest. Thing. Ever.
+            </p>
+            <p>One day he had us watch an episode of 60 minutes. It was focused on a company called IDEO that’s widely known as a design and consulting firm. It showed a day in their life as they observed people, made sketches, and created prototypes. Instantly, I was in love. They were enjoying themselves and helping solve real world problems at the same time. That inspired me. The idea of creating things that people use AND enjoy.
+            </p>
+        </section>
 
-    <!-- this section starts off my background -->
-    <section>
-        <h2>Back to where it all began
-        </h2>
-        <p>Introduction to Engineering Design. That’s where it all started for me. It was a class taught by one of my favorite professors, Dr. Howard. He was on the team that created SolidWorks, a computer-aided design program that millions of people use. For the first time in my life, I was starting to understand that everything around me had to go through a design process. I was doing that by creating 3D models in SolidWorks. Coolest. Thing. Ever.
-        </p>
-        <p>One day he had us watch an episode of 60 minutes. It was focused on a company called IDEO that’s widely known as a design and consulting firm. It showed a day in their life as they observed people, made sketches, and created prototypes. Instantly, I was in love. They were enjoying themselves and helping solve real world problems at the same time. That inspired me. The idea of creating things that people use AND enjoy.
-        </p>
-        <h2>“The most important thing is try and inspire people.” - Kobe
-        </h2>
-        <p>Same time next year I was helping teach that Engineering Design class. Unfortunately, there was not a major called Engineering Design so I decided to go with Biomedical Engineering. By the time I reached my upperclass biomedical courses I knew I didn’t love it. I was burned out and had no clue what to do next. I only knew that it was not going to be biomedical related. So, I decided to move across the U.S. and try something new.
-        </p>
-    </section>
+        <section>
+            <h2>“The most important thing is try and inspire people.” - Kobe
+            </h2>
+            <p>Same time next year I was helping teach that Engineering Design class. Unfortunately, there was not a major called Engineering Design so I decided to go with Biomedical Engineering. By the time I reached my upperclass biomedical courses I knew I didn’t love it. I was burned out and had no clue what to do next. I only knew that it was not going to be biomedical related. So, I decided to move across the U.S. and try something new.
+            </p>
+        </section>
+        
+        <!-- this section starts off the new chapter -->
+        <section>
+            <h2>From Engineering to Facebook?!
+            </h2>
+            <p>Enter Facebook. I moved to Austin and helped clients with their ads and investigated broken features. It was different from what I was used to but getting outside your comfort zone is where the growth happens. That experience opened the door for me to manage accounts for GoDaddy on a larger scale. I worked with hundreds of clients as they used the product. However, I noticed that in each role I was only able to identify issues after the fact, and I wanted to help before it got to that point.
+            </p>
+            <p>Like most people, I wanted something different.  I wanted to get to what I saw on that one episode of 60 minutes all those years ago. So, I started researching and I ran into UX Design! UX Design is the perfect intersection of technology, research, and creativity - all the aspects of my skill set I enjoy using.
+            </p>
+        </section>
+        
+        <!-- this section tells where I am now -->
+        <section>
+            <h2>The journey is just beginning!</h2>
+            <p>That brings me today, I am wrapping up an intensive UX design program with Bloc.io. I can honestly say that I’m in love with it and it feels like what I’m meant to be doing. I appreciate the user research - seeing why people make the choices they do. I admire the visual aesthetics - finding the perfect balance in a design. I even geek out over the frontend coding, which my mentor told me I’m crazy for since many designers don’t. I feel at home and energized as I work on my projects. If you want to chat about design please reach out.
+            </p>
+            <p>P.S. - I found that old episode, if you ever need some motivation I highly recommend checking it out 👇🏾
+            </p>
+            <button type="button">Watch Video</button>
+        </section>
+    </div>
     
-    <!-- this section starts off the new chapter -->
-    <section>
-        <h2>From Engineering to Facebook?!
-        </h2>
-        <p>Enter Facebook. I moved to Austin and helped clients with their ads and investigated broken features. It was different from what I was used to but getting outside your comfort zone is where the growth happens. That experience opened the door for me to manage accounts for GoDaddy on a larger scale. I worked with hundreds of clients as they used the product. However, I noticed that in each role I was only able to identify issues after the fact, and I wanted to help before it got to that point.
-        </p>
-        <p>Like most people, I wanted something different.  I wanted to get to what I saw on that one episode of 60 minutes all those years ago. So, I started researching and I ran into UX Design! UX Design is the perfect intersection of technology, research, and creativity - all the aspects of my skill set I enjoy using.
-        </p>
-    </section>
-    
-    <!-- this section tells where I am now -->
-    <section>
-        <h2>The journey is just beginning!</h2>
-        <p>That brings me today, I am wrapping up an intensive UX design program with Bloc.io. I can honestly say that I’m in love with it and it feels like what I’m meant to be doing. I appreciate the user research - seeing why people make the choices they do. I admire the visual aesthetics - finding the perfect balance in a design. I even geek out over the frontend coding, which my mentor told me I’m crazy for since many designers don’t. I feel at home and energized as I work on my projects. If you want to chat about design please reach out.
-        </p>
-        <p>P.S. - I found that old episode, if you ever need some motivation I highly recommend checking it out 👇🏾
-        </p>
-        <button type="button">Watch Video</button>
-    </section>
 </body>
 </html>

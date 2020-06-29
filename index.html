@@ -4,54 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coriyon Arrington | Portfolio</title>
+
+    <!-- Favicons -->
+    <link href="/images/avatar.png" rel="icon">
+    <link href="/images/avatar.png" rel="apple-touch-icon">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/style.css">
+
+    <script src="https://kit.fontawesome.com/58e13ba0ad.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
-    
-    <!-- this is the nav bar -->
-    <nav>
-        <ul>
-            <li><a href="#home"><img src="/images/avatar.png" alt="avatar"></a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="#contact">Contact</a></li>   
-        </ul>
-    </nav>
+    <div class="container">
 
-    <!-- this section holds the hero content -->
-    <section id="home">
-        <header>
-            <h1>My name is Coriyon</h1>
-            <p>I’m a UX Designer based in Austin. I deliver beautiful, intuitive online experiences through solid research, thoughtful design, and accessible code.</p>
-        </header>
-    </section> 
+        <!-- this section holds the hero content -->
+        <section id="home">
+            
+            <!-- this sets the background -->
+            <video id="video-bg" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+                <source src="/images/video-bg.mp4" type="video/mp4">
+            </video>
 
-    <!-- this section holds the case study content -->
-    <section id="work">
-        <h2>Cloud storage made easy</h2>
-        <p>A cloud storage app for users to quickly save, organize, and share their favorite content from GIFs to videos.</p>
-        <a href="/project.html"><img src="/images/mobile-dashboard.png" alt="MobileDashboard"></a>
-        <button type="button">View Prototype</button>
-    </section>
-    
-    <!-- this section holds the contact me info -->
-    <section id="contact">
-        <h1>Please, say hi.</h1>
-        <p>Thank you for stopping by. If you’d like to chat or work on something amazing - let’s connect 👇🏾</p>
-        <ul>
-            <li><a href="https://www.linkedin.com/in/coriyon/">linkedin</a></li>
-            <li><a href="https://github.com/CoriyonArrington">github</a></li>
-            <li><a href="https://www.facebook.com/coriyon">facebook</a></li>
-            <li><a href="https://twitter.com/TheCoriSmoove">twitter</a></li>
-            <li><a href="https://www.instagram.com/coriyonnn/">instagram</a></li>
-        </ul>
-    </section>
+            <!-- this is the nav bar -->
+            <div class="navbar">
+                <img id="avatar" src="/images/avatar.png" alt="avatar">
+                <a id="chevron" href="#work"><span class="fas fa-chevron-down fa-2x"></span></a>
+                <nav id="nav-menu">
+                    <ul id="menu">
+                        <li><a class="menu-text" href="#work">Work</a></li>
+                        <li><a class="menu-text" href="/about.html">About</a></li>
+                        <li><a class="menu-text" href="#contact">Contact</a></li>   
+                    </ul>
+                </nav>
+            </div>
+            
+            <!-- this is the content -->
+            <header>
+                <h1>Hi, my name is Coriyon.</h1>
+                <h3>I’m a UX Designer based in Austin. I deliver beautiful, intuitive online experiences through solid research, thoughtful design, and accessible code.</h3>
+            </header>
 
-    <footer>
-        <div>
-            <p>2020 Coriyon Arrington | Designed and Developed by Coriyon Arrington</p>
-        </div>
-    </footer>
+        </section>
+
+        <!-- this section holds the case study content -->
+        <section id="work">
+            <h2>Cloud storage made easy</h2>
+            <p>A cloud storage app for users to quickly save, organize, and share their favorite content from GIFs to videos.</p>
+            <div class="app-video">
+                <video class="app-video-ex" playsinline="" preload="none" loop="" autoplay="" muted="" src="/images/hifi-mockup-share.mp4">
+                </video>
+            </div>
+            <a href="/project.html">
+                <button type="button">View Case Study</button>
+            </a>
+        </section>
     
+        <!-- this section holds the contact me info -->
+        <section id="contact">
+            <h1>Please, say hi.</h1>
+            <h3>Thank you for stopping by. If you’d like to chat or work on something amazing - let’s connect 👇🏾</h3>
+            <div class="social-media">
+
+                <ul class="social-media-icons">
+                    <li>
+                        <a href="mailto:coriyonarrington@gmail.com"><span class="far fa-paper-plane fa-3x"></span></a>
+                    </li>
+                    <li>
+                      <a href="https://www.linkedin.com/in/coriyonarrington/"><span class="fab fa-linkedin fa-3x"></span></a>
+                    </li>
+                    <li>
+                      <a href="https://github.com/CoriyonArrington"><span class="fab fa-github fa-3x"></span></a>
+                    </li>
+                    <li>
+                      <a href="https://www.facebook.com/coriyon"><span class="fab fa-facebook-square fa-3x"></span></a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/TheCoriSmoove"><span class="fab fa-twitter-square fa-3x"></span></a>
+                    </li>
+                    <li>
+                      <a href="https://www.instagram.com/coriyonnn/"><span class="fab fa-instagram fa-3x"></span></a>
+                    </li>
+                  </ul>
+
+            </div>
+
+            <!-- <a href="#home"><span class="fas fa-chevron-up"></span></a> -->
+
+            <footer>
+                <div id="footer">
+                    <span class="fas fa-copyright"></span>
+                    <h5>2020 Coriyon Arrington | Designed and Developed by Coriyon Arrington</h5>
+                </div>
+            </footer>
+
+        </section>        
+    </div>
 </body>
-
 </html>
