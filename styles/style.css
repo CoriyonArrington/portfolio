@@ -12,6 +12,7 @@ a:link, a:visited {
 body {
     background-color: #000000;
     color: #ffffff;
+    -webkit-font-smoothing: antialiased;
 }
 
 button, img, video {
@@ -112,7 +113,8 @@ img#mobile-avatar {
     background-color: #000000;
     height: 0%;
     left: 0;
-    outline: 2px solid #FFCD00;
+    border-left: 2px solid #FFCD00;
+    border-right: 2px solid #FFCD00;
     outline-offset: -2px;
     overflow: hidden;
     position: fixed;
@@ -136,7 +138,7 @@ img#mobile-avatar {
     padding: 8px;
     text-decoration: none;
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 2.4rem;
+    font-size: 3.6rem;
     transition: 0.3s;
 }
 
@@ -154,7 +156,7 @@ img#mobile-avatar {
 # The Hero Section
 --------------------------------------------------------------*/
 a#chevron {
-    align-self: center;
+    align-self: start;
     flex-grow: 1;
     text-align: center;
 }
@@ -167,6 +169,14 @@ div.home-page-container {
 #home {
     display: flex;
     flex-wrap: wrap;
+}
+
+section#home h1 {
+    align-self: flex-end;
+}
+
+section#home h3 {
+    align-self: center;
 }
 
 #video-bg {
@@ -228,25 +238,15 @@ footer {
 /*--------------------------------------------------------------
 # About Page Styles
 --------------------------------------------------------------*/
-body#about-page {
-    background-color: #000000;
-    background-image: url('/images/about-me.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: 75%;
-    background-size: cover;
-    color: #ffffff;
-}
-
 div.about-page-container {
-    padding: 0 2.4rem;
+    margin: 2.4rem;
+    padding: 2.4rem 2.4rem;
     width: 100%;
 }
 
 section.about-section {
     height: auto;
     padding: 1.2rem 0;
-    text-shadow: 1px 1px black;
 }
 
 /*--------------------------------------------------------------
@@ -266,8 +266,7 @@ div.comp-analysis img, div.user-personas img {
 }
 
 div.project-page-container {
-    margin: 0 auto;
-    padding: 0 2.4rem;
+    padding: 2.4rem 2.4rem;
     width: 100%;
 }
 
@@ -351,13 +350,12 @@ div.prototype-examples {
     }
 
     div.about-page-container {
-        margin: auto;
         padding: 0 2.4rem;
         width: 90%;
     }
 
     div.home-page-container {
-        width: 90%;
+        width: 84%;
         margin: auto;
     }
 
@@ -374,7 +372,7 @@ div.prototype-examples {
     }
 
     div.home-page-container h3 {
-        width: 80%;
+        width: 86%;
     }
 
     header#desktopNav {
@@ -415,10 +413,34 @@ div.prototype-examples {
 /*--------------------------------------------------------------
 # Small Laptop Queries
 --------------------------------------------------------------*/
-@media screen and (min-width: 1024px) {
-    body#about-page {
-        backdrop-filter: brightness(72%);
-    }  
+@media screen and (min-width: 1024px) {    
+    .cursor-dot,
+    .cursor-dot-outline {
+        border-radius: 50%;
+        left: 50%;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    
+    .cursor-dot {
+        background-color: #FFCD00;
+        height: 12px;
+        mix-blend-mode: difference;
+        width: 12px;
+        z-index: 1000; 
+    }
+    
+    .cursor-dot-outline {
+        background-color: #ffffff;
+        display: none;
+        height: 36px;
+        width: 36px;
+        z-index: 1000;  
+    }
 
     div.comp-analysis img, div.user-personas img {
         width: 32%;
@@ -471,6 +493,7 @@ div.prototype-examples {
         padding: 2rem 1rem;
         display: flex;
         font-family: 'Nunito Sans', sans-serif;
+        font-size: 1.2rem;
         color: #ffffff;
     }
 
@@ -527,33 +550,19 @@ div.prototype-examples {
     a:hover, body, button, html  {
         cursor: none !important;
     }
-    
-    .cursor-dot,
-    .cursor-dot-outline {
-        border-radius: 50%;
-        left: 50%;
-        opacity: 0;
-        pointer-events: none;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    body#about-page {
+        background-color: #000000;
+        background-image: url('/images/about-me.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: 75%;
+        background-size: cover;
+        color: #ffffff;
     }
-    
-    .cursor-dot {
-        background-color: #FFCD00;
-        height: 12px;
-        mix-blend-mode: difference;
-        width: 12px;
-        z-index: 1000; 
-    }
-    
-    .cursor-dot-outline {
-        background-color: #ffffff;
-        display: none;
-        height: 36px;
-        width: 36px;
-        z-index: 1000;  
+
+    section.about-section {
+        text-shadow: 1px 1px black;
     }
 
     div.social-media ul {
@@ -594,5 +603,11 @@ div.prototype-examples {
 
     section#work p {
         width: 72%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    html {
+        font-size: 20px;
     }
 }
