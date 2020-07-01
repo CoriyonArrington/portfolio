@@ -31,7 +31,7 @@ button {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.4rem;
     font-style: normal;
-    font-weight: 600;
+    font-weight: bold;
     line-height: 2.8rem;
     margin-top: 2.4rem;
 }
@@ -72,6 +72,34 @@ span.fab:hover, span.far:hover, span.fas:hover  {
 /*--------------------------------------------------------------
 # The Typography
 --------------------------------------------------------------*/
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url(/fonts/nunitosans-regular.ttf);
+}
+
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url(/fonts/nunitosans-semibold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(/fonts/montserrat-light.ttf);
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(/fonts/nunitosans-regular.ttf);
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(/fonts/montserrat-semibold.ttf);
+    font-weight: bold;
+}
+
 h1, h2, h3, h4, p {
     margin-bottom: 2.4rem;
     font-family: 'Montserrat', sans-serif;
@@ -138,7 +166,7 @@ img#mobile-avatar {
     padding: 8px;
     text-decoration: none;
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 3.6rem;
+    font-size: 2.4em;
     transition: 0.3s;
 }
 
