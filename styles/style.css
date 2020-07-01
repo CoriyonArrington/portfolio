@@ -1,9 +1,12 @@
+/*--------------------------------------------------------------
+# Global Styles
+--------------------------------------------------------------*/
 * {
     box-sizing: border-box;
 }
 
-html {
-    font-size: 10px;
+a:link, a:visited {
+    text-decoration: none;
 }
 
 body {
@@ -11,12 +14,7 @@ body {
     color: #ffffff;
 }
 
-.container {
-    margin: 0 auto;
-    width: 100%;
-}
-
-img, video, button {
+button, img, video {
     display: block;
     height: auto;
     margin: 0 auto 2.4rem auto;
@@ -24,35 +22,12 @@ img, video, button {
     max-height: 100%;
 }
 
-section {
-    height: 100vh;
-    padding: 2.4rem 2.4rem;
-}
-
-::selection {
-    background: #FFCD00;
-    color: #fff;
-}
-
-/*--------------------------------------------------------------
-# The Components
---------------------------------------------------------------*/
-a#chevron {
-    align-self: center;
-    flex-grow: 1;
-    text-align: center;
-}
-
-a:link, a:visited {
-    text-decoration: none;
-}
-
 button {
     background-color: transparent;
     border: 1px solid #FFCD00;
     border-radius: 8px;
     color: #ffffff;
-    font-family: Nunito Sans;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1.4rem;
     font-style: normal;
     font-weight: 600;
@@ -60,26 +35,37 @@ button {
     margin-top: 2.4rem;
 }
 
+button:focus {
+    background-color: #FFCD00;
+    color: #000000;
+}
+
 button:hover {
     background-color: #FFCD00;
+    color: #000000;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+section {
+    height: 100vh;
+    padding: 1.2rem 0;
+}
+
+span.fab, span.far, span.fas {
     color: #ffffff;
 }
 
-img#avatar {
-    align-self: center;
-    margin: 0;
-    order: 2;
-    width: 48px;
+span.fab:hover, span.far:hover, span.fas:hover  {
+    color: #FFCD00;
 }
 
-span.far, span.fab, span.fas {
-    color: #ffffff;
-}
-
-nav#nav-menu {
-    height: 0;
-    opacity: 0;
-    width: 0;
+::selection {
+    background: #FFCD00;
+    color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -91,15 +77,15 @@ h1, h2, h3, h4, p {
 }
 
 h1 {
-    font-size: 5.2rem;
+    font-size: 5.4rem;
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 3.6rem;
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 300;
 }
 
@@ -109,18 +95,78 @@ p {
 }
 
 /*--------------------------------------------------------------
+# Home Page Styles
+--------------------------------------------------------------*/
+header#desktopNav {
+    display: none;
+}
+
+img#mobile-avatar {
+    position: fixed;
+    bottom: .25vh;
+    right: 2.4rem;
+    width: 48px;
+}
+
+.overlay {
+    background-color: #000000;
+    height: 0%;
+    left: 0;
+    outline: 2px solid #FFCD00;
+    outline-offset: -2px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    transition: 0.5s;
+    width: 100%;
+    z-index: 1;
+}
+
+.overlay-content {
+    margin-top: 3rem;
+    position: relative;
+    text-align: center;
+    top: 25%;
+    width: 100%;
+}
+
+.overlay a {
+    color: #ffffff;
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 2.4rem;
+    transition: 0.3s;
+}
+
+.overlay a:focus, .overlay a:hover {
+    color: #FFCD00;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 2.4rem;
+    right: 4.8rem;
+}
+
+/*--------------------------------------------------------------
 # The Hero Section
 --------------------------------------------------------------*/
+a#chevron {
+    align-self: center;
+    flex-grow: 1;
+    text-align: center;
+}
+
+div.home-page-container {
+    padding: 0 2.4rem;
+    width: 100%;
+}
+
 #home {
     display: flex;
     flex-wrap: wrap;
-}
-
-div.navbar {
-    display: flex;
-    justify-content: flex-end;
-    order: 1;
-    width: 100%;
 }
 
 #video-bg {
@@ -128,7 +174,7 @@ div.navbar {
     min-width: 100%;
     min-height: 100%;
     object-fit: cover;
-    opacity: 0.2;
+    opacity: 0.3;
     position: absolute;
     top: 0;
     z-index: -1;
@@ -138,56 +184,146 @@ div.navbar {
 # The Work Section
 --------------------------------------------------------------*/
 div.app-video {
-    height: 0px;
-    padding-top: 90%;
-    position: relative;
-    width: 100%;
+    display: contents;
 }
 
 video.app-video-ex {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
+    height: 48%;
+    width: auto;
 }
 
 /*--------------------------------------------------------------
 # The Contact Section
 --------------------------------------------------------------*/
 #contact {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    margin-top: 2.4rem;
 }
 
-div.social-media {
-    flex-grow: 2;
-}
-
-ul.social-media-icons {
-    display: flex;
-}
-
-ul.social-media-icons li {
-    flex-grow: 1;
-}
-
-footer {
-    display: flex;
-}
-       
 div#footer {
+    align-items: center;
     align-self: flex-end;
     display: flex;
     padding: 0 3rem;
 }
 
 div#footer h5 {
-    margin: 0 1rem;
+    margin: 1.2em;
+}
+
+div.social-media ul {
+    display: grid;
+    grid-row-gap: 2.4rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    margin: 0 2.4rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
 }
 
 /*--------------------------------------------------------------
-# Media queries
+# About Page Styles
+--------------------------------------------------------------*/
+body#about-page {
+    background-color: #000000;
+    background-image: url('/images/about-me.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 75%;
+    background-size: cover;
+    color: #ffffff;
+}
+
+div.about-page-container {
+    padding: 0 2.4rem;
+    width: 100%;
+}
+
+section.about-section {
+    height: auto;
+    padding: 1.2rem 0;
+    text-shadow: 1px 1px black;
+}
+
+/*--------------------------------------------------------------
+# Project Page Styles
+--------------------------------------------------------------*/
+div.comp-analysis, div.user-personas {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+}
+
+div.comp-analysis img, div.user-personas img {
+    width: 75%;
+    margin: 0 .8rem;
+}
+
+div.project-page-container {
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    width: 100%;
+}
+
+div.project-page-container ul {
+    align-items: center;
+    align-self: center;
+    list-style: none;
+    text-align: center;
+    padding-left: 0;
+}
+
+.project.feedback img {
+    width: 60%;
+}
+
+.project.prototype video {
+    width: 80%;
+}
+
+.project.summary h3 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.project.summary h4 {
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.project.summary li {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.6rem;
+}
+
+section.project {
+    height: auto;
+}
+
+div.prototype-examples {
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+/*--------------------------------------------------------------
+# Phone Queries
 --------------------------------------------------------------*/
 @media screen and (min-width: 360px) {
     html {
@@ -197,16 +333,266 @@ div#footer h5 {
 
 @media screen and (min-width: 375px) and (min-height: 812px) {
     html {
-        font-size: 13px;
+        font-size: 12px;
     }
 
-    div.app-video {
-        padding-top: 120%;
+    video.app-video-ex {
+        height: 54%;
     }
 }
 
-@media screen and (min-width: 411px) {
+/*--------------------------------------------------------------
+# Tablet Queries
+--------------------------------------------------------------*/
+@media screen and (min-width:768px) {
+    a#chevron {
+        align-self: auto;
+        width: 100%;
+    }
+
+    div.about-page-container {
+        margin: auto;
+        padding: 0 2.4rem;
+        width: 90%;
+    }
+
+    div.home-page-container {
+        width: 90%;
+        margin: auto;
+    }
+
+    div.project-page-container {
+        margin: auto;
+        padding: 0 2.4rem;
+        width: 90%;
+    }
+
+
+    div.project-page-container {
+        width: 90%;
+        margin: auto;
+    }
+
+    div.home-page-container h3 {
+        width: 80%;
+    }
+
+    header#desktopNav {
+        display: none;
+    }
+
+
+    #home h1, #contact h1 {
+        align-self: center;
+    }
+
     html {
-        font-size: 13px;
+        font-size: 14px;
+    }
+
+    img#desktop-avatar {
+        margin: 1.2rem 0;
+        width: 48px;
+    }
+
+    .project.feedback img {
+        width: 24%;
+    }
+
+    .project.prototype video {
+        width: 64%;
+    }
+
+    span.fas.fa-times.fa-3x {
+        display: none;
+    }
+
+    video.app-video-ex {
+        height: 64%;
+    }
+}
+
+/*--------------------------------------------------------------
+# Small Laptop Queries
+--------------------------------------------------------------*/
+@media screen and (min-width: 1024px) {
+    body#about-page {
+        backdrop-filter: brightness(72%);
+    }  
+
+    div.comp-analysis img, div.user-personas img {
+        width: 32%;
+        margin: 0 auto;
+    }
+
+    div.comp-analysis h4 {
+        align-self: flex-end;
+    }
+
+    div.summary-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 2.4rem 0;
+    }
+
+    div.survey-results {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+    }
+
+    div.survey-results img {
+        max-width: 100%;
+    }
+
+    header#desktopNav {
+        display: flex;
+        width: 100%;
+    }
+
+    img#mobile-avatar {
+        display: none;
+    }
+
+    nav.nav-menu {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    } 
+
+    nav.nav-menu ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+    }
+
+    nav.nav-menu a {
+        padding: 2rem 1rem;
+        display: flex;
+        font-family: 'Nunito Sans', sans-serif;
+        color: #ffffff;
+    }
+
+    nav.nav-menu a:hover {
+        color: #FFCD00;
+        transform: scale(1.2);
+    }
+    
+    .project img {
+        max-width: 72%;
+    }
+
+    .project.prototype video {
+        width: 48%;
+    }
+
+    section.about-section {
+        width: 64%;
+    }
+
+    section#work {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section#work p {
+        grid-column-start: 1;
+        align-self: start;
+        grid-row-start: 2;
+    }
+
+    video.app-video-ex {
+        grid-column-start: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        height: 72%;
+    }
+
+    div.app-video a {
+        grid-row-start: 2;
+        grid-column-start: 1;
+        align-self: auto;
+        justify-self: left;
+    }
+}
+
+/*--------------------------------------------------------------
+# Regular Laptop Queries
+--------------------------------------------------------------*/
+@media screen and (min-width: 1200px) {
+    a:hover, body, button, html  {
+        cursor: none !important;
+    }
+    
+    .cursor-dot,
+    .cursor-dot-outline {
+        border-radius: 50%;
+        left: 50%;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    
+    .cursor-dot {
+        background-color: #FFCD00;
+        height: 12px;
+        mix-blend-mode: difference;
+        width: 12px;
+        z-index: 1000; 
+    }
+    
+    .cursor-dot-outline {
+        background-color: #ffffff;
+        display: none;
+        height: 36px;
+        width: 36px;
+        z-index: 1000;  
+    }
+
+    div.social-media ul {
+        margin: 0 12.4rem;
+    }
+
+    .project img {
+        max-width: 54%;
+    }
+
+    .project.feedback img {
+        width: 10%;
+    }
+
+    .project.prototype button {
+        align-self: flex-end;
+    }
+
+    section.about-section {
+        width: 56%;
+    }
+
+    section#contact h3 {
+        width: 86%;
+    }
+
+    section#home h3 {
+        width: 90%;
+    }
+
+    section#work h2 {
+        align-self: end;
+    }
+
+    section#work h2 {
+        width: 94%;
+    }
+
+    section#work p {
+        width: 72%;
     }
 }

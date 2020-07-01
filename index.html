@@ -13,93 +13,97 @@
     <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/style.css">
 
+    <!-- Script Files -->
     <script src="https://kit.fontawesome.com/58e13ba0ad.js" crossorigin="anonymous"></script>
+    <script src="/scripts/main.js" defer></script>
 
 </head>
-<body>
-    <div class="container">
+<body id="home-page">
+    <div class="home-page-container">
+        <!-- this is the desktop nav -->
+        <header id="desktopNav">
+            <a href="/index.html"><img id="desktop-avatar" src="/images/avatar.png" alt="avatar"></a>
+            <nav class="nav-menu">
+                <a href="/index.html#work">Work</a>
+                <a href="/about.html">About</a>
+                <a href="/index.html#contact">Contact</a>
+            </nav>
+        </header>
 
-        <!-- this section holds the hero content -->
-        <section id="home">
-            
+        <!-- this is the mobile nav -->
+        <header id="mobileNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span class="fas fa-times"></span></a>
+            <nav class="overlay-content">
+                <a href="/index.html">Home</a>
+                <a href="/index.html#work">Work</a>
+                <a href="/about.html">About</a>
+                <a href="/index.html#contact">Contact</a>
+            </nav>
+        </header>
+
+        <!-- this is the nav icon and logo -->
+        <span onclick="openNav()"><img id="mobile-avatar" src="/images/avatar.png" alt="avatar"></span>
+    
+        <main>
             <!-- this sets the background -->
-            <video id="video-bg" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
-                <source src="/images/video-bg.mp4" type="video/mp4">
+            <video id="video-bg" poster="/images/poster.png" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+                <source src="/videos/video-bg.mp4" type="video/mp4">
             </video>
 
-            <!-- this is the nav bar -->
-            <div class="navbar">
-                <img id="avatar" src="/images/avatar.png" alt="avatar">
-                <a id="chevron" href="#work"><span class="fas fa-chevron-down fa-2x"></span></a>
-                <nav id="nav-menu">
-                    <ul id="menu">
-                        <li><a class="menu-text" href="#work">Work</a></li>
-                        <li><a class="menu-text" href="/about.html">About</a></li>
-                        <li><a class="menu-text" href="#contact">Contact</a></li>   
-                    </ul>
-                </nav>
-            </div>
-            
-            <!-- this is the content -->
-            <header>
+            <!-- this section holds the hero content -->
+            <section id="home">
                 <h1>Hi, my name is Coriyon.</h1>
                 <h3>I’m a UX Designer based in Austin. I deliver beautiful, intuitive online experiences through solid research, thoughtful design, and accessible code.</h3>
-            </header>
+                <a id="chevron" href="#work" aria-label="Work Section"><span class="fas fa-chevron-down fa-2x"></span></a> 
+            </section>
 
-        </section>
-
-        <!-- this section holds the case study content -->
-        <section id="work">
-            <h2>Cloud storage made easy</h2>
-            <p>A cloud storage app for users to quickly save, organize, and share their favorite content from GIFs to videos.</p>
-            <div class="app-video">
-                <video class="app-video-ex" playsinline="" preload="none" loop="" autoplay="" muted="" src="/images/hifi-mockup-share.mp4">
-                </video>
-            </div>
-            <a href="/project.html">
-                <button type="button">View Case Study</button>
-            </a>
-        </section>
-    
-        <!-- this section holds the contact me info -->
-        <section id="contact">
-            <h1>Please, say hi.</h1>
-            <h3>Thank you for stopping by. If you’d like to chat or work on something amazing - let’s connect 👇🏾</h3>
-            <div class="social-media">
-
-                <ul class="social-media-icons">
-                    <li>
-                        <a href="mailto:coriyonarrington@gmail.com"><span class="far fa-paper-plane fa-3x"></span></a>
-                    </li>
-                    <li>
-                      <a href="https://www.linkedin.com/in/coriyonarrington/"><span class="fab fa-linkedin fa-3x"></span></a>
-                    </li>
-                    <li>
-                      <a href="https://github.com/CoriyonArrington"><span class="fab fa-github fa-3x"></span></a>
-                    </li>
-                    <li>
-                      <a href="https://www.facebook.com/coriyon"><span class="fab fa-facebook-square fa-3x"></span></a>
-                    </li>
-                    <li>
-                      <a href="https://twitter.com/TheCoriSmoove"><span class="fab fa-twitter-square fa-3x"></span></a>
-                    </li>
-                    <li>
-                      <a href="https://www.instagram.com/coriyonnn/"><span class="fab fa-instagram fa-3x"></span></a>
-                    </li>
-                  </ul>
-
-            </div>
-
-            <!-- <a href="#home"><span class="fas fa-chevron-up"></span></a> -->
-
-            <footer>
-                <div id="footer">
-                    <span class="fas fa-copyright"></span>
-                    <h5>2020 Coriyon Arrington | Designed and Developed by Coriyon Arrington</h5>
+            <!-- this section holds the case study content -->
+            <section id="work">
+                <h2>Cloud storage made easy</h2>
+                <p>A cloud storage app for users to quickly save, organize, and share their favorite content from GIFs to videos.</p>
+                <div class="app-video">
+                    <video class="app-video-ex" poster="/images/mobile-dashboard.png" playsinline="" preload="none" loop="" autoplay="" muted="" src="/videos/hifi-mockup-share.mp4">
+                    </video>
+                    <a href="/project.html">
+                        <button type="button">View Case Study</button>
+                    </a>
                 </div>
-            </footer>
+            </section>
 
-        </section>        
+            <!-- this section holds the contact me info -->
+            <section id="contact">
+                <h1>Please, say hi.</h1>
+                <h3>Thank you for stopping by. Your time is appreciated. If you’d like to chat or work on something amazing - let’s connect 👇🏾</h3>
+                <div class="social-media">
+                    <ul class="social-media-icons">
+                        <li>
+                            <a href="mailto:coriyonarrington@gmail.com" aria-label="Email"><span class="far fa-paper-plane fa-3x"></span></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/coriyonarrington/" aria-label="LinkedIn"><span class="fab fa-linkedin fa-3x"></span></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/CoriyonArrington" aria-label="GitHub"><span class="fab fa-github fa-3x"></span></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/coriyon" aria-label="Facebook"><span class="fab fa-facebook-square fa-3x"></span></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/TheCoriSmoove" aria-label="Twitter"><span class="fab fa-twitter-square fa-3x"></span></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/coriyonnn/" aria-label="Instagram"><span class="fab fa-instagram fa-3x"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <footer>
+                    <div id="footer">
+                        <span class="fas fa-copyright"></span>
+                            <h5>2020 Coriyon Arrington | Designed and Developed by Coriyon Arrington</h5>
+                    </div>
+                </footer>
+            </section>
+        </main>
     </div>
 </body>
 </html>
