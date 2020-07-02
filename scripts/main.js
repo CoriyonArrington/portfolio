@@ -1,13 +1,37 @@
-// this opens the mobile nav menu
+// this opens and closes the mobile nav menu
 
 function openNav() {
     document.getElementById("mobileNav").style.height = "100vh";
 }
 
-// this closes the mobile nav menu
-
 function closeNav() {
     document.getElementById("mobileNav").style.height = "0%";
+}
+
+// this opens and closes the project nav menu
+function openMenu() {
+    document.getElementById("projectNav").style.height = "100vh";
+}
+
+function closeMenu() {
+    document.getElementById("projectNav").style.height = "0%";
+}
+
+// this controls the logo appear/disappear
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("mobile-avatar").style.display = "block";
+    document.getElementById("mobile-avatar").style.transition = "0.3s ease-in-out";
+    document.getElementById("mobile-avatar").style.bottom = ".25vh";
+    // document.getElementById("project-nav-icon").style.display = "block";
+    // document.getElementById("project-nav-icon").style.transition = "0.3s ease-in-out";
+  } else {
+    document.getElementById("mobile-avatar").style.display = "none";
+    // document.getElementById("project-nav-icon").style.display = "none";
+  }
+  prevScrollpos = currentScrollPos;
 }
 
 // this changes the cursor for desktop

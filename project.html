@@ -44,7 +44,6 @@
 
         <!-- this is the desktop nav -->
         <header id="desktopNav">
-            <a href="/index.html"><img id="desktop-avatar" src="/images/avatar.png" alt="avatar"></a>
             <nav class="nav-menu">
                 <a href="/project.html">Work</a>
                 <a href="/about.html">About</a>
@@ -63,12 +62,28 @@
             </nav>
         </header>
 
-        <!-- this is the nav icon and logo -->
-        <span onclick="openNav()"><img id="mobile-avatar" src="/images/avatar.png" alt="avatar"></span>
+        <!-- this is the project nav -->
+        <header id="projectNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()"><span class="fas fa-times"></span></a>
+            <nav class="overlay-content">
+                <a id="menu-summary" href="#summary">Summary</a>
+                <a id="menu-discovery" href="#discovery-research">Discovery</a>
+                <a id="menu-info" href="#information-architecture">Info Architecture</a>
+                <a id="menu-visual" href="#visual-design">Visual Design</a>
+                <a id="menu-proto" href="#prototype-solution">Prototype</a>
+            </nav>
+        </header>
 
+        <!-- this is the nav icons and logo -->
+        <div>
+            <span onclick="openNav()"><img id="mobile-avatar" src="/images/avatar.png" alt="avatar"></span>
+            <i onclick="openMenu()" id="project-nav-icon" class="far fa-compass fa-3x"></i>
+        </div>
+        
+        <!-- this is the main content -->
         <main>
             <!-- the summary section -->
-            <section class="project summary">
+            <section id="summary" class="project summary">
                 <h2>Summary</h2>
                 <p>
                     Eclips Storage allows users to easily save, organize, and share all their favorite content like GIFs and videos.
@@ -142,7 +157,7 @@
             <!-- the process section -->
 
             <!-- discovery & research -->
-            <section class="project discovery">
+            <section id="discovery-research" class="project discovery">
                 <h2>Discovery & Research</h2>
                 <h3>User Survey</h3>
                 <p>
@@ -205,7 +220,7 @@
             <!-- information architecture -->
 
             <!-- user stories -->
-            <section class="project stories">
+            <section id="information-architecture" class="project stories">
                 <h2>Information Architecture</h2>
                 <h3>User Stories</h3>
                 <p>
@@ -258,7 +273,7 @@
             <!-- visual design -->
 
             <!-- brand characteristics -->
-            <section class="project brand">
+            <section id="visual-design" class="project brand">
                 <h2>Visual Design</h2>
                 <h3>Brand Characteristics</h3>
                 <p>
@@ -296,7 +311,7 @@
             </section>
 
             <!-- protoype -->
-            <section class="project prototype">
+            <section id="prototype-solution" class="project prototype">
                 <h2>Prototype</h2>
                 <p>
                     Eclips Storage went through a few rounds of user testing.  I decided to test once the digital wireframes were complete because I was looking for any major design changes that needed to be corrected before spending more time on it. I asked users to test it by trying to complete the following actions:
