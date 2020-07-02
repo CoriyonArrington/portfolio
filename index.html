@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="html" lang="en">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171395181-1"></script>
@@ -52,18 +52,18 @@
         </header>
 
         <!-- this is the mobile nav -->
-        <header id="mobileNav" class="overlay">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span class="fas fa-times"></span></a>
-            <nav class="overlay-content">
-                <a href="/index.html">Home</a>
-                <a href="/project.html">Work</a>
-                <a href="/about.html">About</a>
-                <a href="/index.html#contact">Contact</a>
+            <nav id="mobileNav" class="overlay">
+                <a href="javascript:void(0)" aria-label="close button" class="closebtn" onclick="closeNav()"><span class="fas fa-times"></span></a>
+                <div class="overlay-content">
+                    <a href="/index.html">Home</a>
+                    <a href="/project.html">Work</a>
+                    <a href="/about.html">About</a>
+                    <a href="/index.html#contact">Contact</a>
+                </div>
             </nav>
-        </header>
-
+    
         <!-- this is the nav icon and logo -->
-        <span onclick="openNav()"><img id="mobile-avatar" src="/images/avatar.png" alt="avatar"></span>
+        <span onclick="openNav()" tabindex="0"><img id="mobile-avatar" src="/images/avatar.png" alt="avatar"></span>
     
         <main>
             <!-- this sets the background -->

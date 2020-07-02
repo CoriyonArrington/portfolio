@@ -1,10 +1,27 @@
-// this opens and closes the mobile nav menu
-
+// this opens and closes the mobile nav menu while preventing body scrolling
 function openNav() {
     document.getElementById("mobileNav").style.height = "100vh";
+    document.getElementById("html").style.overflow = "hidden";
+    document.getElementById("home-page").style.overflow = "visible";
+    document.getElementById("home-page").style.height = "100%";
+}
+
+function openNavpro() {
+    document.getElementById("mobileNav").style.height = "100vh";
+    document.getElementById("html").style.overflow = "hidden";
+    document.getElementById("project-page").style.overflow = "visible";
+    document.getElementById("project-page").style.height = "100%";
+}
+
+function openNavabt() {
+    document.getElementById("mobileNav").style.height = "100vh";
+    document.getElementById("html").style.overflow = "hidden";
+    document.getElementById("about-page").style.overflow = "visible";
+    document.getElementById("about-page").style.height = "100%";
 }
 
 function closeNav() {
+    document.getElementById("html").style.overflow = "visible";
     document.getElementById("mobileNav").style.height = "0%";
 }
 
