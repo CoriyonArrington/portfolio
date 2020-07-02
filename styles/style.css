@@ -12,6 +12,7 @@ a:link, a:visited {
 body {
     background-color: #000000;
     color: #ffffff;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -132,13 +133,18 @@ header#desktopNav {
 
 img#mobile-avatar {
     position: fixed;
-    bottom: .25vh;
+    bottom: 0.25vh;
     right: 2.4rem;
-    width: 60px;
+    width: 54px;
+    z-index: 10;
+    transition: transform 0.3s ease-in-out;
 }
 
-img#mobile-avatar:focus {
-    transform: skew(-10deg);
+img#mobile-avatar.is-hidden {
+    transform: translateY(200%);
+}
+img#mobile-avatar.is-visible {
+    transform: translateY(0);
 }
 
 .overlay {
@@ -154,30 +160,13 @@ img#mobile-avatar:focus {
     transition: 0.2s ease-in;
     width: 100%;
     z-index: 1;
-
-    /* background-color: #000000;
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 5000;
-    height: 0%; */
 }
 
 .overlay-content {
-    /* margin: 4rem 0; */
     position: relative;
     text-align: center;
     top: 25%;
     width: 100%;
-
-    /* position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto; */
 }
 
 .overlay a {
@@ -332,7 +321,7 @@ i.far.fa-compass.fa-3x {
     bottom: 18vh;
     color: #ADACAF;
     position: fixed;
-    right: 4rem;
+    right: 3.6rem;
 }
 
 .project.feedback img {
@@ -380,17 +369,18 @@ section.project {
     }
 
     i.far.fa-compass.fa-3x {
+        bottom: 15vh;
         right: 3.6rem;
     }
 }
 
-@media screen and (min-width: 375px) and (min-height: 812px) {
+@media screen and (max-width: 375px) and (min-height: 812px) {
     html {
         font-size: 12px;
     }
 
     i.far.fa-compass.fa-3x {
-        bottom: 14vh;
+        bottom: 12vh;
         right: 3.4rem;
     }
 
@@ -506,10 +496,6 @@ section.project {
         display: flex;
         width: 100%;
     }
-
-    /* img#mobile-avatar {
-        display: none;
-    } */
 
     nav.nav-menu {
         display: flex;
@@ -670,11 +656,11 @@ section.project {
 
 @media screen and (min-width: 1440px) {
     html {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     i.far.fa-compass.fa-3x {
-        bottom: 16vh;
+        bottom: 14vh;
         right: 2.4rem;
     }
 }
