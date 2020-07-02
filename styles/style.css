@@ -13,7 +13,6 @@ body {
     background-color: #000000;
     color: #ffffff;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
 }
 
 button, img, video {
@@ -115,13 +114,13 @@ h2 {
 }
 
 h3 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: lighter;
 }
 
 p {
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 1.6rem;
+    font-size: 2rem;
 }
 
 /*--------------------------------------------------------------
@@ -133,15 +132,15 @@ header#desktopNav {
 
 img#mobile-avatar {
     position: fixed;
-    bottom: 0.25vh;
+    bottom: 6.4vh;
     right: 2.4rem;
     width: 54px;
-    z-index: 10;
+    z-index: 5;
     transition: transform 0.3s ease-in-out;
 }
 
 img#mobile-avatar.is-hidden {
-    transform: translateY(200%);
+    transform: translateY(300%);
 }
 img#mobile-avatar.is-visible {
     transform: translateY(0);
@@ -159,7 +158,7 @@ img#mobile-avatar.is-visible {
     top: 0;
     transition: 0.2s ease-in;
     width: 100%;
-    z-index: 1;
+    z-index: 10;
 }
 
 .overlay-content {
@@ -318,10 +317,12 @@ div.prototype-examples {
 }
 
 i.far.fa-compass.fa-3x {
-    bottom: 18vh;
-    color: #ADACAF;
+    bottom: 23vh;
+    color: #ffffff;
     position: fixed;
     right: 3.6rem;
+    z-index: 5;
+    transition: transform 0.3s ease-in-out;
 }
 
 .project.feedback img {
@@ -369,8 +370,8 @@ section.project {
     }
 
     i.far.fa-compass.fa-3x {
-        bottom: 15vh;
-        right: 3.6rem;
+        bottom: 21vh;
+        right: 3.4rem;
     }
 }
 
@@ -380,8 +381,8 @@ section.project {
     }
 
     i.far.fa-compass.fa-3x {
-        bottom: 12vh;
-        right: 3.4rem;
+        bottom: 18vh;
+        right: 3.2rem;
     }
 
     video.app-video-ex {
@@ -442,7 +443,8 @@ section.project {
     }
 
     i.far.fa-compass.fa-3x {
-        right: 3.2rem;
+        bottom: 16vh;
+        right: 3rem;
     }
 
     .project.feedback img {
@@ -495,6 +497,10 @@ section.project {
     header#desktopNav {
         display: flex;
         width: 100%;
+    }
+
+    i.far.fa-compass.fa-3x {
+        bottom: 20vh;
     }
 
     nav.nav-menu {

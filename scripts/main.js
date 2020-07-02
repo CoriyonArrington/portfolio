@@ -25,7 +25,7 @@ function closeNav() {
     document.getElementById("mobileNav").style.height = "0%";
 }
 
-// this opens and closes the project nav menu
+// this opens and closes the project nav menu while preventing body scrolling
 function openMenu() {
     document.getElementById("projectNav").style.height = "100vh";
     document.getElementById("html").style.overflow = "hidden";
@@ -55,6 +55,7 @@ function debounce(func, wait = 10, immediate = true) {
 
   let scrollPos = 0;
   const nav = document.querySelector('#mobile-avatar');
+  const pnav = document.querySelector('#project-nav-icon');
 
   function checkPosition() {
     let windowY = window.scrollY;
@@ -68,7 +69,7 @@ function debounce(func, wait = 10, immediate = true) {
       nav.classList.remove('is-visible');
     }
     scrollPos = windowY;
-  }
+}
 
 window.addEventListener('scroll', debounce(checkPosition));
 
