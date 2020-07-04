@@ -43,8 +43,11 @@
     <div class="project-page-container">
 
         <!-- this is the desktop nav -->
-        <header id="desktopNav">
-            <nav class="nav-menu">
+        <header class="desktop-nav">
+            <nav class="desktop-menu">
+                <a href="/index.html">
+                    <img class="desktop-avatar" src="/images/avatar.png" alt="avatar">
+                </a>
                 <a href="/project.html">Work</a>
                 <a href="/about.html">About</a>
                 <a href="/index.html#contact">Contact</a>
@@ -52,35 +55,37 @@
         </header>
 
         <!-- this is the mobile nav -->
-        <nav id="mobileNav" class="overlay">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span class="fas fa-times"></span></a>
+        <header class="mobile-nav">
+            <a href="/index.html">
+                <img class="mobile-avatar" src="/images/avatar.png" alt="avatar">
+            </a>
+            <a href="javascript:void(0);" onclick="openMenu()" aria-label="menu button" tabindex="0">
+                <span class="fas fa-bars fa-2x"></span>
+            </a>
+        </header>
+        <nav id="overlay" class="overlay">
+            <a href="javascript:void(0);" onclick="closeMenu()" aria-label="close button" tabindex="0">
+                <span id="close-btn" class="far fa-window-close fa-2x"></span>
+            </a>
             <div class="overlay-content">
-                <a href="/index.html">Home</a>
                 <a href="/project.html">Work</a>
                 <a href="/about.html">About</a>
                 <a href="/index.html#contact">Contact</a>
             </div>
+            <div class="social-media">
+                <ul class="social-media-icons">
+                    <li>
+                        <a href="mailto:coriyonarrington@gmail.com" aria-label="Email"><span class="far fa-paper-plane fa-3x"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/coriyonarrington/" aria-label="LinkedIn"><span class="fab fa-linkedin fa-3x"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/CoriyonArrington" aria-label="GitHub"><span class="fab fa-github fa-3x"></span></a>
+                    </li>
+                </ul>
+            </div>
         </nav>
-
-        <!-- this is the project nav -->
-        <header id="projectNav" class="overlay">
-            <a href="javascript:void(0)" aria-label="close button" class="closebtn" onclick="closeMenu()"><span class="fas fa-times"></span></a>
-            <nav class="overlay-content">
-                <div class="nav-container">
-                    <a id="menu-summary" href="#summary">Summary</a>
-                    <a id="menu-discovery" href="#discovery-research">Discovery</a>
-                    <a id="menu-info" href="#information-architecture">Info Architecture</a>
-                    <a id="menu-visual" href="#visual-design">Visual Design</a>
-                    <a id="menu-proto" href="#prototype-solution">Prototype</a>
-                </div>
-            </nav>
-        </header>
-
-        <!-- this is the nav icons and logo -->
-        <div>
-            <span onclick="openNavpro()"><img id="mobile-avatar" src="/images/avatar.png" alt="avatar"></span>
-            <i onclick="openMenu()" id="project-nav-icon" class="far fa-compass fa-3x"></i>
-        </div>
         
         <!-- this is the main content -->
         <main>
@@ -231,14 +236,16 @@
                 <p>
                     I prioritized them this way because doing so helped me to efficiently create the minimum viable prototype. 
                 </p>
-                <ol>
-                    <li>As a new user I want to create an account</li>
-                    <li>As a new user I want to upload images</li>
-                    <li>As a new user I want to share items by sending a link</li>
-                    <li>As a returning user I want to see my files </li>
-                    <li>As a returning user I want to edit items</li>
-                    <li>As a returning user I want to see available free space</li>
-                </ol>
+                <div class="user-stories-list">
+                    <ol>
+                        <li>As a new user I want to create an account</li>
+                        <li>As a new user I want to upload images</li>
+                        <li>As a new user I want to share items by sending a link</li>
+                        <li>As a returning user I want to see my files </li>
+                        <li>As a returning user I want to edit items</li>
+                        <li>As a returning user I want to see available free space</li>
+                    </ol>
+                </div>
             </section>
 
             <!-- user flows -->

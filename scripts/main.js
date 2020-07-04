@@ -1,43 +1,17 @@
 // this opens and closes the mobile nav menu while preventing body scrolling
-function openNav() {
-    document.getElementById("mobileNav").style.height = "100vh";
-    document.getElementById("html").style.overflow = "hidden";
-    document.getElementById("home-page").style.overflow = "visible";
-    document.getElementById("home-page").style.height = "100%";
-}
-
-function openNavpro() {
-    document.getElementById("mobileNav").style.height = "100vh";
-    document.getElementById("html").style.overflow = "hidden";
-    document.getElementById("project-page").style.overflow = "visible";
-    document.getElementById("project-page").style.height = "100%";
-}
-
-function openNavabt() {
-    document.getElementById("mobileNav").style.height = "100vh";
-    document.getElementById("html").style.overflow = "hidden";
-    document.getElementById("about-page").style.overflow = "visible";
-    document.getElementById("about-page").style.height = "100%";
-}
-
-function closeNav() {
-    document.getElementById("html").style.overflow = "visible";
-    document.getElementById("mobileNav").style.height = "0%";
-}
-
-// this opens and closes the project nav menu while preventing body scrolling
 function openMenu() {
-    document.getElementById("projectNav").style.height = "100vh";
+    document.getElementById("overlay").style.height = "100%";
+    document.getElementById("close-btn").style.display = "flex";
     document.getElementById("html").style.overflow = "hidden";
-    document.getElementById("project-page").style.overflow = "visible";
-    document.getElementById("project-page").style.height = "100%";
 }
 
 function closeMenu() {
-    document.getElementById("html").style.overflow = "visible";
-    document.getElementById("projectNav").style.height = "0%";
+    document.getElementById("overlay").style.height = "0";
+    document.getElementById("close-btn").style.display = "none";
+    document.getElementById("html").style.overflow = "visible"; 
 }
 
+// this hides and shows the nav
 function debounce(func, wait = 10, immediate = true) {
     let timeout;
     return function() {
@@ -54,8 +28,8 @@ function debounce(func, wait = 10, immediate = true) {
   };
 
   let scrollPos = 0;
-  const nav = document.querySelector('#mobile-avatar');
-  const pnav = document.querySelector('#project-nav-icon');
+  const nav = document.querySelector('header.mobile-nav');
+  const desknav = document.querySelector('header.desktop-nav');
 
   function checkPosition() {
     let windowY = window.scrollY;
@@ -63,10 +37,14 @@ function debounce(func, wait = 10, immediate = true) {
       // Scrolling UP
       nav.classList.add('is-visible');
       nav.classList.remove('is-hidden');
+      desknav.classList.add('is-visible');
+      desknav.classList.remove('is-hidden');
     } else {
       // Scrolling DOWN
       nav.classList.add('is-hidden');
       nav.classList.remove('is-visible');
+      desknav.classList.add('is-hidden');
+      desknav.classList.remove('is-visible');
     }
     scrollPos = windowY;
 }
