@@ -11,6 +11,19 @@ function closeMenu() {
     document.getElementById("html").style.overflow = "visible"; 
 }
 
+// this opens and closes the project nav menu while preventing body scrolling
+function openProject() {
+    document.getElementById("project").style.height = "100%";
+    document.getElementById("close-pro-btn").style.display = "flex";
+    document.getElementById("html").style.overflow = "hidden";
+}
+
+function closeProject() {
+    document.getElementById("project").style.height = "0";
+    document.getElementById("close-pro-btn").style.display = "none";
+    document.getElementById("html").style.overflow = "visible"; 
+}
+
 // this hides and shows the nav
 function debounce(func, wait = 10, immediate = true) {
     let timeout;

@@ -44,6 +44,7 @@ h1, h2, h3, h4 {
 p {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.6rem;
+    padding: 1.6rem 0;
 }
 
 h1 {
@@ -94,8 +95,8 @@ button {
     border-radius: 8rem;
     color: #ffffff;
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.2rem;
+    font-size: 2rem;
+    line-height: 2rem;
     padding: 0.8rem;
 }
 
@@ -106,11 +107,6 @@ button:focus, button:hover {
 
 .container {
     padding: 0 2.4rem;
-    width: 100%;
-}
-
-div.overlay-content {
-    text-align: center;
     width: 100%;
 }
 
@@ -154,7 +150,7 @@ img.mobile-avatar {
     width: 48px;
 }
 
-nav#overlay.overlay {
+nav#overlay {
     background-color: #000000;
     height: 0%;
     left: 0;
@@ -172,11 +168,49 @@ nav#overlay.overlay {
     z-index: 20;
 }
 
-.overlay-content a {
+nav#overlay .overlay-content {
+    text-align: center;
+    width: 100%;
+}
+
+nav#overlay .overlay-content a {
     color: #ffffff;
     display: block;
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 3.2em;
+    font-size: 3.2rem;
+    padding: 16px;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+nav#project {
+    background-color: #000000;
+    height: 0%;
+    left: 0;
+    border-left: 4px solid #FFCD00;
+    border-right: 4px solid #FFCD00;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    outline-offset: -2px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    transition: 0.2s ease-in-out;
+    width: 100%;
+    z-index: 20;
+}
+
+nav#project .project-content {
+    text-align: center;
+    width: 100%;
+}
+
+nav#project .project-content a {
+    color: #ffffff;
+    display: block;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 2.4rem;
     padding: 16px;
     text-decoration: none;
     transition: 0.4s;
@@ -212,7 +246,7 @@ span.far.fa-window-close.fa-2x, span.fas.fa-bars.fa-2x {
     width: 48px;  
 }
 
-span.far.fa-window-close.fa-2x {
+span#close-btn, span#close-pro-btn  {
     display: none;
     z-index: 40;
 }
@@ -268,8 +302,7 @@ footer {
 section#home {
     align-content: center;
     align-items: center;
-    justify-content: center;
-    margin: 1.6rem 0;
+    justify-content: space-evenly;
 }
 
 video.app-video-ex {
@@ -318,7 +351,15 @@ section#about-start img {
 # The Project Page
 --------------------------------------------------------------*/
 body#project-page main {
-    margin: 2.4rem 0;
+    padding: 4.8rem 0;
+}
+
+body#project-page a#chevron {
+    justify-content: flex-start;
+}
+
+body#project-page span.fas.fa-chevron-down.fa-2x {
+    align-self: center;
 }
 
 div.comp-analysis, div.user-personas {
@@ -333,7 +374,7 @@ div.comp-analysis img, div.user-personas img {
     width: 75%;
     margin: 0 .8rem;
 }
-div.user-stories-list {
+div.user-stories-list, div.prototype-list {
     margin: 0 auto;
 }
 
@@ -432,19 +473,11 @@ section.project {
     video.app-video-ex {
         height: 54%;
     }
-
-    section#home {
-        margin: 0;
-    }
 }
 
 @media screen and (min-width: 411px) and (min-height: 812px) {
     html {
         font-size: 13px;
-    }
-
-    section#home {
-        margin: 0;
     }
 }
 
@@ -455,6 +488,10 @@ section.project {
     a#chevron {
         align-self: auto;
         width: 100%;
+    }
+
+    body#project-page a#chevron {
+        justify-content: center;
     }
 
     #contact h1 {
@@ -472,16 +509,12 @@ section.project {
     }
 
     div.project-page-container {
-        margin: auto;
+        margin: auto 0;
         width: 84%;
     }
 
     div.home-page-container h3 {
         width: 86%;
-    }
-
-    header#desktopNav {
-        display: none;
     }
 
     #home h1 {
@@ -536,6 +569,14 @@ section.project {
         color: #ffffff;
     }
 
+    body#about-page header.desktop-nav {
+        background-color: #ADACAF;
+    }
+
+    body#project-page a#chevron {
+        align-self: center;
+    }
+
     div.app-video a {
         align-self: auto;
         grid-column-start: 1;
@@ -570,7 +611,7 @@ section.project {
     }
 
     header.desktop-nav {
-        display: flex;
+        display: none;
         height: 64px;
         left: 0;
         position: fixed;
