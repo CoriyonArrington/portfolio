@@ -53,7 +53,7 @@
                     <img class="desktop-avatar" src="/images/avatar.png" alt="avatar">
                 </a>
                 <a href="javascript:void(0);" onclick="openProject()" aria-label="project menu button" tabindex="0" id="chevron" aria-label="down arrow">
-                    <span class="fas fa-chevron-down fa-2x"></span>
+                    <span id="down-arrow" class="fas fa-chevron-down fa-2x"></span>
                 </a> 
                 <a href="/work">Work</a>
                 <a href="/about">About</a>
@@ -63,15 +63,17 @@
 
         <!-- this is the mobile nav -->
         <header class="mobile-nav">
-            <a href="/">
-                <img class="mobile-avatar" src="/images/avatar.png" alt="avatar">
-            </a>
-            <a href="javascript:void(0);" onclick="openProject()" aria-label="project menu button" tabindex="0" id="chevron" aria-label="down arrow">
-                <span class="fas fa-chevron-down fa-2x"></span>
-            </a> 
-            <a href="javascript:void(0);" onclick="openMenu()" aria-label="menu button" tabindex="0">
-                <span class="fas fa-bars fa-2x"></span>
-            </a>
+            <div class="mobile-nav-wrapper">
+                <a href="/">
+                    <img class="mobile-avatar" src="/images/avatar.png" alt="avatar">
+                </a>
+                <a href="javascript:void(0);" onclick="openProject()" aria-label="project menu button" tabindex="0" aria-label="down arrow">
+                    <span id="chevron" class="fas fa-chevron-down fa-2x"></span>
+                </a> 
+                <a href="javascript:void(0);" onclick="openMenu()" aria-label="menu button" tabindex="0">
+                    <span id="menu-btn" class="fas fa-bars fa-2x"></span>
+                </a>
+            </div> 
         </header>
         <nav id="overlay">
             <a href="javascript:void(0);" onclick="closeMenu()" aria-label="close button" tabindex="0">

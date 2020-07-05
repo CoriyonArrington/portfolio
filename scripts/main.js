@@ -42,6 +42,8 @@ function debounce(func, wait = 10, immediate = true) {
 
   let scrollPos = 0;
   const nav = document.querySelector('header.mobile-nav');
+  const btn = document.getElementById('menu-btn');
+  const arrow = document.querySelector('span#chevron');
   const desknav = document.querySelector('header.desktop-nav');
 
   function checkPosition() {
@@ -50,12 +52,20 @@ function debounce(func, wait = 10, immediate = true) {
       // Scrolling UP
       nav.classList.add('is-visible');
       nav.classList.remove('is-hidden');
+      btn.classList.add('is-visible');
+      btn.classList.remove('is-hidden');
+      arrow.classList.add('is-visible');
+      arrow.classList.remove('is-hidden')
       desknav.classList.add('is-visible');
       desknav.classList.remove('is-hidden');
     } else {
       // Scrolling DOWN
       nav.classList.add('is-hidden');
       nav.classList.remove('is-visible');
+      btn.classList.add('is-hidden');
+      btn.classList.remove('is-visible');
+      arrow.classList.add('is-hidden');
+      arrow.classList.remove('is-visible')
       desknav.classList.add('is-hidden');
       desknav.classList.remove('is-visible');
     }

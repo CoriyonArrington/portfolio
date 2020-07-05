@@ -60,12 +60,14 @@
 
         <!-- this is the mobile nav -->
         <header class="mobile-nav">
-            <a href="/index.html">
-                <img class="mobile-avatar" src="/images/avatar.png" alt="avatar">
-            </a>
-            <a href="javascript:void(0);" onclick="openMenu()" aria-label="menu button" tabindex="0">
-                <span class="fas fa-bars fa-2x"></span>
-            </a>
+            <div class="mobile-nav-wrapper">
+                <a href="/">
+                    <img class="mobile-avatar" src="/images/avatar.png" alt="avatar">
+                </a>
+                <a href="javascript:void(0);" onclick="openMenu()" aria-label="menu button" tabindex="0">
+                    <span id="menu-btn" class="fas fa-bars fa-2x"></span>
+                </a>
+            </div>
         </header>
         <nav id="overlay" class="overlay">
             <a href="javascript:void(0);" onclick="closeMenu()" aria-label="close button" tabindex="0">

@@ -63,14 +63,6 @@ h3 {
 /*--------------------------------------------------------------
 # Global Styles
 --------------------------------------------------------------*/
-a#chevron {
-    align-self: center;
-    display: flex;
-    height: 48px;
-    justify-content: center;
-    width: 48px;
-}
-
 a:link, a:visited {
     text-decoration: none;
 }
@@ -110,32 +102,35 @@ button:focus, button:hover {
     width: 100%;
 }
 
+div.mobile-nav-wrapper {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    padding: 1.2rem 2.4rem;
+    width: 100%;
+}
+
 header.desktop-nav {
     display: none;
 }
 
 header.mobile-nav {
-    align-items: center;
     background-color: #000000;
-    display: none;
-    height: 64px;
-    justify-content: space-between;
+    height: 0%;
     left: 0;
-    padding: 0 2.4rem;
     position: fixed;
     top: 0;
-    transition: transform 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
     width: 100%;
     z-index: 10;
 }
 
 header.mobile-nav.is-hidden {
-    display: none;
     transform: translateY(-300%);
 }
 
 header.mobile-nav.is-visible {
-    display: flex;
+    height: auto;
     transform: translateY(0);
 }
 
@@ -234,7 +229,7 @@ span.fab:hover, span.far:hover, span.fas:hover  {
     color: #FFCD00;
 }
 
-span.far.fa-window-close.fa-2x, span.fas.fa-bars.fa-2x {
+span.far.fa-window-close.fa-2x { 
     align-items: center;
     display: flex;
     height: 48px;
@@ -246,16 +241,37 @@ span.far.fa-window-close.fa-2x, span.fas.fa-bars.fa-2x {
     width: 48px;  
 }
 
+span.fas.fa-chevron-down.fa-2x {
+    align-items: center;
+    align-self: center;
+    color: #ADACAF;
+    display: flex;
+    height: 48px;
+    justify-content: center;
+    width: 100%;
+}
+
 span#close-btn, span#close-pro-btn  {
     display: none;
     z-index: 40;
 }
 
-span.fas.fa-chevron-down.fa-2x {
-    align-self: flex-end;
-    color: #ADACAF;
+span#menu-btn {
+    align-items: center;
+    display: none;
+    height: 48px;
+    justify-content: center;
+    width: 48px;
+}
+
+span#menu-btn.is-visible {
     display: flex;
 }
+
+span#menu-btn.is-hidden {
+    display: none;
+}
+
 
 ::selection {
     background: #FFCD00;
@@ -354,14 +370,6 @@ body#project-page main {
     padding: 4.8rem 0;
 }
 
-body#project-page a#chevron {
-    justify-content: flex-start;
-}
-
-body#project-page span.fas.fa-chevron-down.fa-2x {
-    align-self: center;
-}
-
 div.comp-analysis, div.user-personas {
     align-items: center;
     display: grid;
@@ -429,6 +437,18 @@ section.project {
     height: auto;
 }
 
+span#chevron {
+    display: none;
+}
+
+span#chevron.is-visible {
+    display: flex;
+}
+
+span#chevron.is-hidden {
+    display: none;
+}
+
 /*--------------------------------------------------------------
 # Media Queries
 --------------------------------------------------------------*/
@@ -487,6 +507,8 @@ section.project {
 @media screen and (min-width:768px) {
     a#chevron {
         align-self: auto;
+        display: flex;
+        justify-content: center;
         width: 100%;
     }
 
@@ -515,6 +537,12 @@ section.project {
 
     div.home-page-container h3 {
         width: 86%;
+    }
+
+    div.summary-actions {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        padding: 2.4rem 0;
     }
 
     #home h1 {
