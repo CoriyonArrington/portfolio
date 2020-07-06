@@ -91,6 +91,7 @@ button {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.6rem;
     line-height: 0.8rem;
+    margin: 1.6rem auto;
     padding: 1.6rem;
 }
 
@@ -104,15 +105,12 @@ button:focus, button:hover {
     width: 100%;
 }
 
-div.content-wrapper {
-    padding-top: 3.2rem;
-}
-
 div.mobile-nav-wrapper {
+    align-items: center;
     display: flex;
     height: 100%;
     justify-content: space-between;
-    padding: 1.2rem 2.4rem;
+    padding: 0 2.4rem;
     width: 100%;
 }
 
@@ -121,23 +119,24 @@ header.desktop-nav {
 }
 
 header.mobile-nav {
-    background-color: #000000;
-    height: 0%;
+    background-color: transparent;
+    height: auto;
     left: 0;
     position: fixed;
     top: 0;
-    transition: 0.4s ease-in-out;
     width: 100%;
     z-index: 10;
 }
 
 header.mobile-nav.is-hidden {
     transform: translateY(-300%);
+    transition: 0.8s ease-out;
 }
 
 header.mobile-nav.is-visible {
-    height: auto;
+    background-color: #000000;
     transform: translateY(0);
+    transition: 0.8s ease-in;
 }
 
 html {
@@ -248,36 +247,19 @@ span.far.fa-window-close.fa-2x {
 }
 
 span.fas.fa-chevron-down.fa-2x {
-    align-items: center;
+    align-items: flex-start;
     align-self: center;
     color: #ADACAF;
     display: flex;
     height: 48px;
     justify-content: center;
-    width: 100%;
+    width: 48px;
 }
 
 span#close-btn, span#close-pro-btn  {
     display: none;
     z-index: 40;
 }
-
-span#menu-btn {
-    align-items: center;
-    display: none;
-    height: 48px;
-    justify-content: center;
-    width: 48px;
-}
-
-span#menu-btn.is-visible {
-    display: flex;
-}
-
-span#menu-btn.is-hidden {
-    display: none;
-}
-
 
 ::selection {
     background: #FFCD00;
@@ -321,10 +303,12 @@ footer {
     justify-content: center;
 }
 
-section#home {
+#home {
     align-content: center;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    padding-top: 1.6rem;
+    /* justify-content: space-evenly; for higher resolutions */
 }
 
 video.app-video-ex {
@@ -338,7 +322,8 @@ video.app-video-ex {
     min-width: 100%;
     min-height: 100%;
     object-fit: cover;
-    opacity: 0.24;
+    opacity: 0.64;
+    padding: 0;
     position: absolute;
     top: 0;
     z-index: -10;
@@ -347,6 +332,10 @@ video.app-video-ex {
 /*--------------------------------------------------------------
 # The About Page
 --------------------------------------------------------------*/
+body#about-page a#chevron {
+    align-self: center;
+}
+
 section.about-section {
     height: auto;
 }
@@ -364,6 +353,7 @@ section#about-start img {
     min-height: 100%;
     object-fit: cover;
     object-position: 75%;
+    padding: 0;
     position: absolute;
     top: 0;
     z-index: -10;
@@ -374,6 +364,14 @@ section#about-start img {
 --------------------------------------------------------------*/
 body#project-page main {
     padding: 4.8rem 0;
+}
+
+body#project-page ul {
+    align-items: center;
+    align-self: center;
+    list-style: none;
+    text-align: center;
+    padding-left: 0;
 }
 
 div.comp-analysis, div.user-personas {
@@ -392,22 +390,16 @@ div.user-stories-list, div.prototype-list {
     margin: 0 auto;
 }
 
-div.project-page-container {
+/* div.project-page-container {
     padding: 0 2.4rem;
     width: 100%;
-}
+} */
 
 section.project.flows img {
     display: none;
 }
 
-div.project-page-container ul {
-    align-items: center;
-    align-self: center;
-    list-style: none;
-    text-align: center;
-    padding-left: 0;
-}
+
 
 div.prototype-examples {
     align-items: center;
@@ -518,6 +510,16 @@ span#chevron.is-hidden {
         width: 100%;
     }
 
+    div.summary-actions {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body#project-page main {
+        padding: 2.4rem 0;
+    }
+
     body#project-page a#chevron {
         justify-content: center;
     }
@@ -536,19 +538,12 @@ span#chevron.is-hidden {
         width: 84%;
     }
 
-    div.project-page-container {
-        margin: auto 0;
-        width: 84%;
-    }
-
     div.home-page-container h3 {
         width: 86%;
     }
 
-    div.summary-actions {
-        display: grid;
-        grid-template-rows: 1fr 1fr 1fr;
-        padding: 2.4rem 0;
+    #home {
+        justify-content: space-evenly;
     }
 
     #home h1 {
@@ -564,6 +559,11 @@ span#chevron.is-hidden {
         align-self: flex-start;
     }
 
+    main {
+        margin: 0 auto;
+        width: 88%;
+    }
+
     .project.feedback img {
         width: 24%;
     }
@@ -574,6 +574,10 @@ span#chevron.is-hidden {
 
     section {
         margin: 0;
+    }
+
+    section h2 {
+        width: 100%;
     }
 
     section.project.flows img {
@@ -593,20 +597,6 @@ span#chevron.is-hidden {
 # Small Laptop Queries
 --------------------------------------------------------------*/
 @media screen and (min-width: 1024px) {  
-    body#about-page {
-        background-attachment: fixed;
-        background-color: #000000;
-        background-image: url('/images/about-me.png');
-        background-position: 75%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: #ffffff;
-    }
-
-    body#about-page header.desktop-nav {
-        background-color: #ADACAF;
-    }
-
     body#project-page a#chevron {
         align-self: center;
     }
@@ -628,6 +618,7 @@ span#chevron.is-hidden {
     }
 
     div.summary-actions {
+        align-items: flex-start;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         padding: 2.4rem 0;
@@ -644,29 +635,29 @@ span#chevron.is-hidden {
         max-width: 100%;
     }
 
-    header.desktop-nav {
+    header.mobile-nav, img.mobile-avatar {
         display: none;
-        height: 64px;
+    }
+
+    header.desktop-nav {
+        display: flex;
+        height: auto;
         left: 0;
         position: fixed;
         top: 0;
-        transition: transform 0.4s ease-in-out;
         width: 100%;
         z-index: 10;
     }
 
     header.desktop-nav.is-hidden {
-        display: none;
         transform: translateY(-300%);
+        transition: 0.8s ease-out;
     }
     
     header.desktop-nav.is-visible {
-        display: flex;
+        background-color: #000000;
         transform: translateY(0);
-    }
-
-    header.mobile-nav, img.mobile-avatar {
-        display: none !important;
+        transition: 0.8s ease-in;
     }
 
     img.desktop-avatar {
@@ -677,13 +668,11 @@ span#chevron.is-hidden {
     }
 
     nav.desktop-menu {
-        background-color: #000000;
+        align-items: center;
+        background-color: transparent;
         display: flex;
         justify-content: flex-end;
-        left: 0;
-        padding: 0 2.4rem;
-        position: fixed;
-        top: 0;
+        padding: 0 1.6rem;
         width: 100%;
     }
 
@@ -698,7 +687,7 @@ span#chevron.is-hidden {
         display: flex;
         font-family: 'Nunito Sans', sans-serif;
         font-size: 1.2rem;
-        padding: 2.4rem 1.6rem;
+        margin: 1.6rem 0.8rem;
     }
 
     nav.desktop-menu a:hover {
@@ -764,6 +753,16 @@ span#chevron.is-hidden {
         cursor: none !important;
     }
 
+    body#about-page {
+        background-attachment: fixed;
+        background-color: #000000;
+        background-image: url('/images/about-me.png');
+        background-position: 75%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #ffffff;
+    }
+
     .cursor-dot,
     .cursor-dot-outline {
         border-radius: 50%;
@@ -796,6 +795,26 @@ span#chevron.is-hidden {
         margin: 0 18rem;
     }
 
+    #home {
+        align-items: center;
+        display: grid;
+        grid-template-rows: 2fr 1fr 1fr;
+        justify-content: center;
+    }
+
+    #home a {
+        align-self: center;
+        grid-row-start: 3;
+    }
+
+    #home h1 {
+        align-self: flex-end;
+    }
+
+    #home h3 {
+        align-self: flex-start;
+    }
+
     .project img {
         max-width: 54%;
     }
@@ -810,26 +829,6 @@ span#chevron.is-hidden {
 
     section.about-section {
         width: 56%;
-    }
-
-    section#home {
-        align-items: center;
-        display: grid;
-        grid-template-rows: 2fr 1fr 1fr;
-        justify-content: center;
-    }
-
-    section#home a {
-        align-self: center;
-        grid-row-start: 3;
-    }
-
-    section#home h1 {
-        align-self: flex-end;
-    }
-
-    section#home h3 {
-        align-self: flex-start;
     }
 
     section h2 {
@@ -853,5 +852,12 @@ span#chevron.is-hidden {
 @media screen and (min-width: 1440px) {
     html {
         font-size: 16px;
-    }    
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .container {
+        margin: 0 auto;
+        width: 80%;
+    }
 }
