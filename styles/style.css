@@ -120,7 +120,7 @@ header.desktop-nav {
 
 header.mobile-nav {
     background-color: transparent;
-    height: auto;
+    height: 80px;
     left: 0;
     position: fixed;
     top: 0;
@@ -597,6 +597,10 @@ span#chevron.is-hidden {
 # Small Laptop Queries
 --------------------------------------------------------------*/
 @media screen and (min-width: 1024px) {  
+    body#about-page main {
+        text-shadow: 2px 2px #000000;
+    }
+
     body#project-page a#chevron {
         align-self: center;
     }
@@ -641,7 +645,7 @@ span#chevron.is-hidden {
 
     header.desktop-nav {
         display: flex;
-        height: auto;
+        height: 80px;
         left: 0;
         position: fixed;
         top: 0;
@@ -686,7 +690,7 @@ span#chevron.is-hidden {
         color: #ffffff;
         display: flex;
         font-family: 'Nunito Sans', sans-serif;
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         margin: 1.6rem 0.8rem;
     }
 
@@ -846,6 +850,10 @@ span#chevron.is-hidden {
     section#work p {
         align-self: center;
         width: 84%;
+    }
+
+    #video-bg {
+        opacity: 0.24;
     }
 }
 
