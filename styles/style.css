@@ -130,13 +130,13 @@ header.mobile-nav {
 
 header.mobile-nav.is-hidden {
     transform: translateY(-300%);
-    transition: 0.8s ease-out;
+    transition: 0.64s ease-out;
 }
 
 header.mobile-nav.is-visible {
     background-color: #000000;
-    transform: translateY(0);
-    transition: 0.8s ease-in;
+    transform: translateY(-10px);
+    transition: 0.64s ease-in;
 }
 
 html {
@@ -234,12 +234,12 @@ span.fab:hover, span.far:hover, span.fas:hover  {
     color: #FFCD00;
 }
 
-span.far.fa-window-close.fa-2x { 
+span.far.fa-window-close.fa-3x { 
     align-items: center;
     display: flex;
     height: 48px;
     justify-content: center;
-    margin: 0.8rem 2.4rem;
+    margin: 0.8rem 1.6rem;
     position: fixed;
     right: 0;
     top: 0;
@@ -271,7 +271,7 @@ span#close-btn, span#close-pro-btn  {
 --------------------------------------------------------------*/
 #contact {
     display: grid;
-    margin-top: 2.4rem;
+    padding-top: 4.8rem;
 }
 
 div.app-video {
@@ -307,8 +307,7 @@ footer {
     align-content: center;
     align-items: center;
     justify-content: center;
-    padding-top: 1.6rem;
-    /* justify-content: space-evenly; for higher resolutions */
+    padding-top: 4em;
 }
 
 video.app-video-ex {
@@ -343,7 +342,7 @@ section.about-section {
 section#about-start {
     align-items: stretch;
     justify-content: space-between;
-    padding: 4.8rem 0;
+    padding-top: 4.8rem;
 }
 
 section#about-start img {
@@ -390,16 +389,9 @@ div.user-stories-list, div.prototype-list {
     margin: 0 auto;
 }
 
-/* div.project-page-container {
-    padding: 0 2.4rem;
-    width: 100%;
-} */
-
 section.project.flows img {
     display: none;
 }
-
-
 
 div.prototype-examples {
     align-items: center;
@@ -496,6 +488,15 @@ span#chevron.is-hidden {
 @media screen and (min-width: 411px) and (min-height: 812px) {
     html {
         font-size: 13px;
+    }
+
+    #home {
+        justify-content: flex-start;
+        padding-top: 3.2rem;
+    }
+
+    #contact {
+        padding-top: 2.4rem;
     }
 }
 
@@ -655,13 +656,13 @@ span#chevron.is-hidden {
 
     header.desktop-nav.is-hidden {
         transform: translateY(-300%);
-        transition: 0.8s ease-out;
+        transition: 0.64s ease-out;
     }
     
     header.desktop-nav.is-visible {
         background-color: #000000;
-        transform: translateY(0);
-        transition: 0.8s ease-in;
+        transform: translateY(-10px);
+        transition: 0.64s ease-in;
     }
 
     img.desktop-avatar {
@@ -690,12 +691,13 @@ span#chevron.is-hidden {
         color: #ffffff;
         display: flex;
         font-family: 'Nunito Sans', sans-serif;
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         margin: 1.6rem 0.8rem;
     }
 
     nav.desktop-menu a:hover {
         color: #FFCD00;
+        transform: scale(1.2);
     }
     
     .project img {
