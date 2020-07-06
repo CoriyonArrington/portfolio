@@ -343,13 +343,13 @@ section.about-section {
     height: auto;
 }
 
-section#about-start {
+section.about-start {
     align-items: stretch;
     justify-content: space-between;
     padding: 4.8rem 0;
 }
 
-section#about-start img {
+section.about-start img {
     left: 0;
     margin: 0;
     min-width: 100%;
@@ -602,6 +602,16 @@ span#chevron.is-hidden {
 # Small Laptop Queries
 --------------------------------------------------------------*/
 @media screen and (min-width: 1024px) {  
+    div.about-styling {
+        display: flex;
+        flex-direction: column;
+        height: 88vh;
+    }
+    
+    body#about-page a#chevron {
+        display: none;
+    }
+
     body#about-page main {
         padding-top: 4.8rem;
         text-shadow: 2px 2px #000000;
@@ -713,12 +723,12 @@ span#chevron.is-hidden {
         width: 48%;
     }
 
-    section#about-start {
+    section.about-start {
         height: auto;
         padding: 0;
     }
     
-    section#about-start a {
+    section.about-start a {
         display: none;
     }
 
@@ -759,16 +769,6 @@ span#chevron.is-hidden {
 @media screen and (min-width: 1200px) {
     a:hover, body, button, html  {
         cursor: none !important;
-    }
-
-    body#about-page {
-        background-attachment: fixed;
-        background-color: #000000;
-        background-image: url('/images/about-me.png');
-        background-position: 75%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: #ffffff;
     }
 
     .cursor-dot,
