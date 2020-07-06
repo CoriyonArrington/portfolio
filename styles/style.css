@@ -71,6 +71,8 @@ body {
     background-color: #000000;
     color: #ffffff;
     overflow-x: hidden !important;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
 }
 
 button, img, video {
@@ -120,7 +122,7 @@ header.desktop-nav {
 
 header.mobile-nav {
     background-color: transparent;
-    height: 80px;
+    height: 88px;
     left: 0;
     position: fixed;
     top: 0;
@@ -143,10 +145,12 @@ html {
     font-size: 10px;
     overflow-x: hidden !important;
     scroll-behavior: smooth;
+    min-height: -webkit-fill-available;
 }
 
 img.mobile-avatar {
     margin: 0;
+    padding: 0;
     width: 48px;
 }
 
@@ -307,7 +311,7 @@ footer {
     align-content: center;
     align-items: center;
     justify-content: center;
-    padding-top: 4em;
+    padding-top: 3.2em;
 }
 
 video.app-video-ex {
@@ -492,7 +496,7 @@ span#chevron.is-hidden {
 
     #home {
         justify-content: flex-start;
-        padding-top: 3.2rem;
+        padding-top: 2.4rem;
     }
 
     #contact {

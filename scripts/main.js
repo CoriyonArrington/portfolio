@@ -41,8 +41,23 @@ function debounce(func, wait = 10, immediate = true) {
   };
 
   let scrollPos = 0;
+  let scrollTimer = -1;
   const nav = document.querySelector('header.mobile-nav');
   const desknav = document.querySelector('header.desktop-nav');
+  
+  function bodyScroll() {
+    if (scrollTimer != -1)
+        clearTimeout(scrollTimer);
+
+    scrollTimer = window.setTimeout("scrollFinished()", 1000);
+    }
+
+    function scrollFinished() {
+        nav.classList.add('is-visible');
+        nav.classList.remove('is-hidden');
+        desknav.classList.add('is-visible');
+        desknav.classList.remove('is-hidden');
+    }
 
   function checkPosition() {
     let windowY = window.scrollY;
