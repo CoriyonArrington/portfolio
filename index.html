@@ -35,6 +35,7 @@
     <!-- CSS Files -->
     <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- Script Files -->
     <script src="https://kit.fontawesome.com/58e13ba0ad.js" crossorigin="anonymous"></script>
@@ -100,11 +101,11 @@
                     </video>
                     <h1>Hi, my name is Coriyon.</h1>
                     <h3>I’m a UX Designer based in Austin. I deliver beautiful, intuitive online experiences through solid research, thoughtful design, and accessible code.</h3>
-                    <a id="chevron" aria-label="down arrow"><span class="fas fa-chevron-down fa-2x"></span></a> 
+                    <a href="#work" id="chevron" aria-label="down arrow"><span class="fas fa-chevron-down fa-2x"></span></a> 
                 </section>
 
                 <!-- this section holds the case study content -->
-                <section id="work">
+                <section id="work" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
                     <h2>Cloud storage made easy</h2>
                     <p>A cloud storage app for users to quickly save, organize, and share their favorite content from GIFs to videos.</p>
                     <div class="app-video">
@@ -118,7 +119,7 @@
                 </section>
 
                 <!-- this section holds the contact me info -->
-                <section id="contact">
+                <section id="contact" data-aos="fade-up" data-aos-duration="1500">
                     <h1>Please, say hi.</h1>
                     <h3>Thank you for stopping by. Your time is appreciated. If you’d like to chat or work on something amazing - let’s connect 👇🏾</h3>
                     <div class="social-media">
@@ -153,5 +154,8 @@
             </div>
         </main>
     </div>
+    <script src="/scripts/zenscroll-min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
 </body>
 </html>
