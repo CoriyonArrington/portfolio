@@ -145,6 +145,7 @@ html {
     font-size: 10px;
     min-height: -webkit-fill-available;
     overflow-x: hidden !important;
+    scroll-behavior: smooth;
 }
 
 img.mobile-avatar {
@@ -223,6 +224,7 @@ section {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    padding-top: 4.8rem;
 }
 
 section h2 {
@@ -274,7 +276,10 @@ span#close-btn, span#close-pro-btn  {
 --------------------------------------------------------------*/
 #contact {
     display: grid;
-    padding-top: 4.8rem;
+}
+
+#contact h1 {
+    width: 88%;
 }
 
 div.app-video {
@@ -309,8 +314,7 @@ footer {
 #home {
     align-content: center;
     align-items: center;
-    justify-content: center;
-    padding-top: 3.2em;
+    justify-content: space-evenly;
 }
 
 video.app-video-ex {
@@ -491,15 +495,6 @@ span#chevron.is-hidden {
 @media screen and (min-width: 411px) and (min-height: 812px) {
     html {
         font-size: 13px;
-    }
-
-    #home {
-        justify-content: flex-start;
-        padding-top: 2.4rem;
-    }
-
-    #contact {
-        padding-top: 2.4rem;
     }
 }
 
