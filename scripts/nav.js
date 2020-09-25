@@ -1,25 +1,40 @@
-// this opens and closes the mobile nav menu while preventing body scrolling
-function openMenu() {
-    document.getElementById("overlay").style.height = "100%";
-    document.getElementById("close-btn").style.display = "flex";
-    document.getElementById("html").style.overflow = "hidden";
+// this hides and shows the nav
+function debounce(func, wait = 10, immediate = true) {
+  let timeout;
+  return function () {
+    let context = this,
+      args = arguments;
+    let later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    let callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
 }
 
-function closeMenu() {
-    document.getElementById("overlay").style.height = "0";
-    document.getElementById("close-btn").style.display = "none";
-    document.getElementById("html").style.overflow = "visible"; 
+let scrollPos = 0;
+let scrollTimer = -5;
+
+function checkPosition() {
+  let windowY = window.pageYOffset;
+  if (windowY <= scrollPos) {
+    // Scrolling UP
+    mainNav.classList.add("is-visible");
+    mainNav.classList.remove("is-hidden");
+    mainNav.classList.add("filled");
+    mainNav.classList.remove("transparent");
+  } else {
+    // Scrolling DOWN
+    mainNav.classList.add("is-hidden");
+    mainNav.classList.remove("is-visible");
+    mainNav.classList.add("transparent");
+    mainNav.classList.remove("filled");
+  }
+
+  scrollPos = windowY;
 }
 
-// this opens and closes the project nav menu while preventing body scrolling
-function openProject() {
-    document.getElementById("project").style.height = "100%";
-    document.getElementById("close-pro-btn").style.display = "flex";
-    document.getElementById("html").style.overflow = "hidden";
-}
-
-function closeProject() {
-    document.getElementById("project").style.height = "0";
-    document.getElementById("close-pro-btn").style.display = "none";
-    document.getElementById("html").style.overflow = "visible"; 
-}
+window.addEventListener("scroll", debounce(checkPosition));

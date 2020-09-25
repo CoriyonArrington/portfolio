@@ -32,72 +32,28 @@
     <meta property="og:url" content="https://coriyon.com/" />
 
     <!-- Favicons -->
-    <link href="images/avatar.png" rel="icon" />
-    <link href="images/avatar.png" rel="apple-touch-icon" />
+    <link href="../images/avatar.png" rel="icon" />
+    <link href="../images/avatar.png" rel="apple-touch-icon" />
 
     <!-- Canonical Links -->
-    <link rel="canonical" href="about" />
-    <link rel="canonical" href="work" />
+    <link rel="canonical" href="../about" />
+    <link rel="canonical" href="../index.html#work" />
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="test-css.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-    <!--Load the AJAX API-->
-    <script
-      type="text/javascript"
-      src="https://www.gstatic.com/charts/loader.js"
-    ></script>
-    <script type="text/javascript">
-      // Load the Visualization API and the corechart package.
-      google.charts.load("current", { packages: ["corechart"] });
-
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
-
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn("string", "Topping");
-        data.addColumn("number", "Slices");
-        data.addRows([
-          ["Mushrooms", 3],
-          ["Onions", 1],
-          ["Olives", 1],
-          ["Zucchini", 1],
-          ["Pepperoni", 2],
-        ]);
-
-        // Set chart options
-        var options = {
-          title: "How Much Pizza I Ate Last Night",
-          width: 400,
-          height: 300,
-        };
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(
-          document.getElementById("chart_div")
-        );
-        chart.draw(data, options);
-      }
-    </script>
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
   </head>
   <body>
     <!-- this is the page container -->
     <div id="case-study" class="page-container">
       <header>
         <nav id="main-nav">
-          <a href="test.html#html">
-            <img class="logo" src="images/logo.svg" alt="avatar" />
+          <a href="/">
+            <img class="logo" src="../images/logo.svg" alt="avatar" />
           </a>
           <ul id="menu-list">
             <li>
-              <a href="test.html#work" class="menu-item" onclick="anchorLink()"
+              <a href="../#work" class="menu-item" onclick="anchorLink()"
                 >Work</a
               >
             </li>
@@ -109,12 +65,9 @@
                 >Resume</a
               >
             </li>
-            <li><a href="#about-hero" class="menu-item">About</a></li>
+            <li><a href="../about" class="menu-item">About</a></li>
             <li>
-              <a
-                href="test.html#contact"
-                class="menu-item"
-                onclick="anchorLink()"
+              <a href="#contact" class="menu-item" onclick="anchorLink()"
                 >Contact</a
               >
             </li>
@@ -211,15 +164,21 @@
         </div>
 
         <!-- the summary hero section -->
-        <section class="work-example hero">
+        <section class="project">
           <h2>Eclips Storage</h2>
-          <h4>
+          <p>
             Eclips Storage allows users to easily save, organize, and share all
             their favorite content like GIFs and videos.
-          </h4>
-          <img src="../images/case-study-example-3.png" alt="app screenshots" />
+          </p>
+          <div class="project-example">
+            <img
+              src="../images/case-study-example-3.png"
+              alt="app screenshots"
+            />
+          </div>
           <a
             href="https://www.figma.com/proto/FJ9Vb8gAfj0sWk7hQT8lwo/UX-Intensive?node-id=180%3A945&viewport=62%2C365%2C0.021977005526423454&scaling=scale-down&hide-ui=1"
+            target="_blank"
             aria-label="prototype"
           >
             <button type="button" class="primary">View Prototype</button>
@@ -233,7 +192,7 @@
             <ul>
               <li>User Surveys</li>
               <li>User Personas</li>
-              <li>Competitve Analysis</li>
+              <li>Competitive Analysis</li>
               <li>Brand Identity</li>
               <li>User Stories & Flows</li>
               <li>Wireframes</li>
@@ -265,7 +224,7 @@
         </section>
 
         <!-- the problem section -->
-        <section class="project problem">
+        <section class="project">
           <h2>The Problem</h2>
           <p>
             Most people have personal content stored in several places. They
@@ -275,15 +234,21 @@
         </section>
 
         <!-- the solution section -->
-        <section class="work-example solution">
+        <section class="project">
           <h2>The Solution</h2>
           <p>
             Eclips Storage allows users to quickly save, organize, and share all
             of their favorite content in one place.
           </p>
-          <img src="../images/case-study-example-2.png" alt="app screenshots" />
+          <div class="project-example">
+            <img
+              src="../images/case-study-example-2.png"
+              alt="app screenshots"
+            />
+          </div>
           <a
             href="https://www.figma.com/proto/FJ9Vb8gAfj0sWk7hQT8lwo/UX-Intensive?node-id=180%3A945&viewport=62%2C365%2C0.021977005526423454&scaling=scale-down&hide-ui=1"
+            target="_blank"
             aria-label="prototype"
           >
             <button type="button" class="primary">View Prototype</button>
@@ -293,7 +258,7 @@
         <!-- the process section -->
 
         <!-- discovery & research -->
-        <section id="discovery-research" class="project discovery">
+        <section id="discovery-research" class="project">
           <h2>Discovery & Research</h2>
           <h3>User Survey</h3>
           <p>
@@ -305,22 +270,23 @@
             helped me prioritize what features to include for a minimum viable
             prototype - mobile upload & sharing an item.
           </p>
-          <div class="assets">
+          <div class="project-example col3">
             <img
               src="../images/cloud-storage-features.png"
               alt="cloud storage features"
             />
             <img
-              src="../images/cloud-storage-use.png"
-              alt="cloud storage use"
+              src="../images/cloud-storage-apps.png"
+              alt="cloud storage apps"
             />
             <img
-              src="../images/cloud-storage-apps.png"
+              src="../images/cloud-storage-use.png"
               alt="cloud storage apps"
             />
           </div>
           <a
             href="https://docs.google.com/document/d/1kkZdcfhDnmd6tiOVrFNEeEgXDil3y8FjTZzF75vhh1c/edit?usp=sharing"
+            target="_blank"
             aria-label="survey analysis"
           >
             <button type="button" class="primary">View Analysis</button>
@@ -328,7 +294,7 @@
         </section>
 
         <!-- competitive analysis -->
-        <section class="project competitive-analysis">
+        <section class="project">
           <h3>Competitive Analysis</h3>
           <p>
             From there, I decided to take a deeper look at what people were
@@ -348,7 +314,7 @@
             files in order to share. This made me consider the possibility of
             making that process more efficient and streamlined.
           </p>
-          <div class="assets">
+          <div class="project-example col3">
             <img src="../images/google-drive.png" alt="Google Drive" />
             <img src="../images/dropbox.png" alt="Dropbox" />
             <img src="../images/icloud.png" alt="iCloud" />
@@ -358,6 +324,7 @@
           </div>
           <a
             href="https://coriyonarrington.xtensio.com/98vyfqqt"
+            target="_blank"
             aria-label="competitive analysis"
           >
             <button type="button" class="primary">View Analysis</button>
@@ -365,7 +332,7 @@
         </section>
 
         <!-- user personas -->
-        <section class="project user-personas">
+        <section class="project">
           <h3>User Personas</h3>
           <p>
             User-focused design is all about remembering the user at each step
@@ -374,7 +341,7 @@
             the user to life and I referred back to them as I was designing the
             app.
           </p>
-          <div class="personas">
+          <div class="project-example col3">
             <img src="../images/persona-tanya.png" alt="user persona" />
             <img src="../images/persona-josh.png" alt="user persona" />
             <img src="../images/persona-morgan.png" alt="user persona" />
@@ -384,6 +351,7 @@
           </div>
           <a
             href="https://coriyonarrington.xtensio.com/zsqib08d"
+            target="_blank"
             aria-label="user personas"
           >
             <button type="button" class="primary">View Personas</button>
@@ -393,7 +361,7 @@
         <!-- information architecture -->
 
         <!-- user stories -->
-        <section id="information-architecture" class="project user-stories">
+        <section id="information-architecture" class="project">
           <h2>Information Architecture</h2>
           <h3>User Stories</h3>
           <p>
@@ -401,26 +369,21 @@
             So, I decided to complete some user stories so I could have a clear
             idea of all the actions that a user would go through. I used the
             data from the survey and the goals from the personas to find help me
-            prioritize them.
+            prioritize them. I prioritized them this way because doing so helped
+            me to efficiently create the minimum viable prototype.
           </p>
-          <p>
-            I prioritized them this way because doing so helped me to
-            efficiently create the minimum viable prototype.
-          </p>
-          <div class="user-stories-list">
-            <ol>
-              <li>As a new user I want to create an account</li>
-              <li>As a new user I want to upload images</li>
-              <li>As a new user I want to share items by sending a link</li>
-              <li>As a returning user I want to see my files</li>
-              <li>As a returning user I want to edit items</li>
-              <li>As a returning user I want to see available free space</li>
-            </ol>
-          </div>
+          <ol>
+            <li>As a new user I want to create an account</li>
+            <li>As a new user I want to upload images</li>
+            <li>As a new user I want to share items by sending a link</li>
+            <li>As a returning user I want to see my files</li>
+            <li>As a returning user I want to edit items</li>
+            <li>As a returning user I want to see available free space</li>
+          </ol>
         </section>
 
         <!-- user flows -->
-        <section class="project user-flows">
+        <section class="project">
           <h3>User Flows</h3>
           <p>
             Streamlining the user process was important because it would lead to
@@ -431,16 +394,13 @@
             to the competitive analysis to get an idea of what users were
             familiar with and tighten the gaps.
           </p>
-          <div class="assets flows">
-            <iframe
-              class="responsive-iframe"
-              src="https://whimsical.com/embed/RDxYQ91ia7GC6SeUd8rEUd@2Ux7TurymPS8JCc58NFP"
-            ></iframe>
-            <!-- <img src="../images/user-flows.png" alt="user-flows"> -->
+          <div class="project-example user-flows">
+            <img src="../images/user-flows.png" alt="user-flows" />
           </div>
 
           <a
             href="https://whimsical.com/RDxYQ91ia7GC6SeUd8rEUd#7YNFXnKbYtnysZsY9NLvG"
+            target="_blank"
             aria-label="user flows"
           >
             <button type="button" class="primary">View Flows</button>
@@ -448,7 +408,7 @@
         </section>
 
         <!-- digital wireframes -->
-        <section class="project wireframes">
+        <section class="project">
           <h3>Digital Wireframes</h3>
           <p>
             Once the user flows were complete, it was time to start exploring
@@ -470,12 +430,15 @@
             I decided to have two places, the top where they could slide through
             recent and the body where they could see albums.
           </p>
-          <img
-            src="../images/digital-wireframes.png"
-            alt="digital wireframes"
-          />
+          <div class="project-example">
+            <img
+              src="../images/digital-wireframes.png"
+              alt="digital wireframes"
+            />
+          </div>
           <a
             href="https://invis.io/ZAWW06X7E6R"
+            target="_blank"
             aria-label="digital wireframe prototype"
           >
             <button type="button" class="primary">Wireframe Prototype</button>
@@ -485,7 +448,7 @@
         <!-- visual design -->
 
         <!-- brand characteristics -->
-        <section id="visual-design" class="project branding">
+        <section id="visual-design" class="project">
           <h2>Visual Design</h2>
           <h3>Brand Characteristics</h3>
           <p>
@@ -495,9 +458,12 @@
             to achieve this goal such as the use of tan accents colors often
             found in modern interior design.
           </p>
-          <img src="../images/moodboard.png" alt="mood board" />
+          <div class="project-example">
+            <img src="../images/moodboard.png" alt="mood board" />
+          </div>
           <a
             href="https://www.figma.com/proto/FJ9Vb8gAfj0sWk7hQT8lwo/UX-Intensive?node-id=585%3A21716&viewport=1786%2C1156%2C0.08784467726945877&scaling=scale-down-width"
+            target="_blank"
             aria-label="digital brand style guide"
           >
             <button type="button" class="primary">View Style Guide</button>
@@ -505,7 +471,7 @@
         </section>
 
         <!-- color palette -->
-        <section class="project color-palette">
+        <section class="project">
           <p>
             Dark orange and dark cyan are the main colors of Eclips Storage.
             Orange is a color that invokes a feeling of happiness and is
@@ -518,11 +484,13 @@
             use of the lighter accent colors helps the primary colors to pop
             while not clashing.
           </p>
-          <img src="../images/color-palette.png" alt="color palette" />
+          <div class="project-example">
+            <img src="../images/color-palette.png" alt="color palette" />
+          </div>
         </section>
 
         <!-- typography -->
-        <section class="project typography">
+        <section class="project">
           <h3>Typography</h3>
           <p>
             Outerorbit was chosen as the brand typeface and Quicksand was chosen
@@ -531,20 +499,25 @@
             when thinking of cloud storage and a more modern look as well. The
             goal is to feel familiar while also standing out
           </p>
+          <div class="project-example">
+            <img src="../images/typeface.png" alt="font type" />
+          </div>
         </section>
 
         <!-- logo design and process -->
-        <section class="project logo-design">
-          <h3>Logo Design& Process</h3>
+        <section class="project">
+          <h3>Logo Design & Process</h3>
           <p>
             The logo was designed with beauty of simplicity in mind. It reflects
             that with the use of some basic shapes and the brand name.
           </p>
-          <img src="../images/logo-black-bg.png" alt="logo example" />
+          <div class="project-example">
+            <img src="../images/logo-black-bg.png" alt="logo example" />
+          </div>
         </section>
 
         <!-- prototype -->
-        <section id="prototype-solution" class="project prototype">
+        <section id="prototype-solution" class="project">
           <h2>Prototype</h2>
           <p>
             Eclips Storage went through a few rounds of user testing. I decided
@@ -553,15 +526,13 @@
             before spending more time on it. I asked users to test it by trying
             to complete the following actions:
           </p>
-          <div class="prototype-list">
-            <ol>
-              <li>Create an account</li>
-              <li>Add some content</li>
-              <li>Organize the content</li>
-              <li>Share the content</li>
-              <li>Sign out of the account</li>
-            </ol>
-          </div>
+          <ol>
+            <li>Create an account</li>
+            <li>Add some content</li>
+            <li>Organize the content</li>
+            <li>Share the content</li>
+            <li>Sign out of the account</li>
+          </ol>
           <p>
             It revealed some areas that needed to be corrected. For example, it
             showed me that users wanted to be able to share directly from the
@@ -573,9 +544,9 @@
             added the visual design and then completed the round of user
             testing.
           </p>
-          <div class="prototype-examples">
+          <div class="project-example prototypes">
             <video
-              src="videos/lofi-wireframe-share.mp4"
+              src="../videos/lofi-wireframe-share.mp4"
               playsinline=""
               preload="none"
               loop=""
@@ -583,7 +554,7 @@
               muted=""
             ></video>
             <video
-              src="videos/hifi-mockup-share.mp4"
+              src="../videos/hifi-mockup-share.mp4"
               playsinline=""
               preload="none"
               loop=""
@@ -594,11 +565,11 @@
         </section>
 
         <!-- feedback -->
-        <section class="project feedback">
+        <section class="project">
           <h3>Feedback</h3>
           <p>
             Thanks to the great feedback, I was able to increase the usability
-            score from 66 to 82! I received overwhelmingly positive feedback
+            score from 66 to 82. I received overwhelmingly positive feedback
             from the users.
           </p>
           <p>
@@ -611,10 +582,13 @@
             The preference testing was able to clear most up that by showing me
             statistically what users prefer.
           </p>
-          <img src="../images/blue-button.png" alt="blue button" />
-          <img src="../images/orange-button.png" alt="orange button" />
+          <div class="project-example">
+            <img src="../images/blue-button.png" alt="blue button" />
+            <img src="../images/orange-button.png" alt="orange button" />
+          </div>
           <a
             href="https://www.figma.com/proto/FJ9Vb8gAfj0sWk7hQT8lwo/UX-Intensive?node-id=180%3A945&viewport=62%2C365%2C0.021977005526423454&scaling=scale-down&hide-ui=1"
+            target="_blank"
             aria-label="prototype"
           >
             <button type="button" class="primary">View Final Prototype</button>
@@ -622,7 +596,7 @@
         </section>
 
         <!-- conclusion -->
-        <section class="project conclusion">
+        <section class="project">
           <h2>The Conclusion</h2>
           <p>
             There are still aspects I would continue to improve and refine if
@@ -663,13 +637,10 @@
             All in all, I learned a ton and I am incredibly happy with the way
             it turned out. I’m looking forward to the next journey.
           </p>
-        </section>
-
-        <div class="hero-cta">
-          <a href="test-findblack.html">
+          <a href="/work/findblack.html">
             <button type="button" class="primary">Next Project</button>
           </a>
-        </div>
+        </section>
 
         <!-- this section holds the contact me info -->
         <section id="contact">
@@ -768,15 +739,14 @@
         <h5>2020 Designed and Developed by Coriyon A.</h5>
       </footer>
     </div>
-    <script src="test-main.js" defer></script>
-    <script src="scripts/zenscroll.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/nav.js"></script>
+    <script src="../scripts/zenscroll-min.js"></script>
+    <script src="../scripts/progress.js"></script>
     <script
       src="https://kit.fontawesome.com/58e13ba0ad.js"
       crossorigin="anonymous"
     ></script>
-    <script src="test-nav.js"></script>
-    <script src="test-cursor.js"></script>
-    <script src="test-progress.js"></script>
-    <script src="test-charts.js"></script>
+    <script src="../scripts/cursor.js"></script>
   </body>
 </html>

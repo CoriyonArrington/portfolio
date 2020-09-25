@@ -1,54 +1,53 @@
-// this hides and shows the nav
-function debounce(func, wait = 10, immediate = true) {
-    let timeout;
-    return function() {
-      let context = this, args = arguments;
-      let later = function() {
-        timeout = null;
-        if (!immediate) func.apply(context, args);
-      };
-      let callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
-    };
-  };
+// this opens and closes the mobile nav menu while preventing body scrolling
+let menuItem = document.getElementsByClassName("menu-item");
+let contactMe = document.getElementById("contact-me");
+let mainNav = document.getElementById("main-nav");
+let menuList = document.getElementById("menu-list");
+let menuBtn = document.getElementById("menu-btn");
+let closeBtn = document.getElementById("close-btn");
+let contact = document.getElementById("contact");
+let html = document.getElementById("html");
 
-  let scrollPos = 0;
-  let scrollTimer = -1;
-  const nav = document.querySelector('header.mobile-nav');
-  const desknav = document.querySelector('header.desktop-nav');
-  
-  function bodyScroll() {
-    if (scrollTimer != -1)
-        clearTimeout(scrollTimer);
+var i;
 
-    scrollTimer = window.setTimeout("scrollFinished()", 1000);
-    }
+function openMenu() {
+  for (i = 0; i < menuItem.length; i++) {
+    menuItem[i].style.display = "block";
+  }
 
-    function scrollFinished() {
-        nav.classList.add('is-visible');
-        nav.classList.remove('is-hidden');
-        desknav.classList.add('is-visible');
-        desknav.classList.remove('is-hidden');
-    }
-
-  function checkPosition() {
-    let windowY = window.scrollY;
-    if (windowY < scrollPos) {
-      // Scrolling UP
-      nav.classList.add('is-visible');
-      nav.classList.remove('is-hidden');
-      desknav.classList.add('is-visible');
-      desknav.classList.remove('is-hidden');
-    } else {
-      // Scrolling DOWN
-      nav.classList.add('is-hidden');
-      nav.classList.remove('is-visible');
-      desknav.classList.add('is-hidden');
-      desknav.classList.remove('is-visible');
-    }
-    scrollPos = windowY;
+  mainNav.style.height = "100%";
+  closeBtn.style.display = "flex";
+  menuBtn.style.display = "none";
+  mainNav.style.backgroundColor = "#000000";
+  mainNav.style.gridTemplateRows = "80px 2fr 1fr";
+  menuList.style.display = "block";
+  mainNav.appendChild(contactMe);
+  contactMe.style.display = "grid";
+  contactMe.style.padding = "4%";
+  contactMe.style.gridColumn = "1 / span 2";
+  mainNav.style.transition = "0.4s ease-in";
+  html.style.overflow = "hidden";
 }
 
-window.addEventListener('scroll', debounce(checkPosition));
+function closeMenu() {
+  for (i = 0; i < menuItem.length; i++) {
+    menuItem[i].style.display = "none";
+  }
+
+  mainNav.style.transition = "0.4s ease-out";
+  mainNav.style.height = "80px";
+  mainNav.style.alignItems = "center";
+  mainNav.style.gridTemplateRows = "auto";
+  closeBtn.style.display = "none";
+  html.style.overflow = "visible";
+  menuBtn.style.display = "flex";
+  mainNav.removeChild(contactMe);
+  menuList.style.display = "none";
+}
+
+// this allows the mobile menu anchor links to navigate properly
+function anchorLink() {
+  mainNav.style.transition = "0.4s ease-out";
+  mainNav.style.height = "80px";
+  mainNav.removeChild(contactMe);
+}
