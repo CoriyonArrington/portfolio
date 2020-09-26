@@ -264,7 +264,7 @@ span.fas {
   min-height: 100%;
   object-fit: cover;
   object-position: 75%;
-  opacity: 0.24;
+  opacity: 0.4;
   padding: 0;
   position: absolute;
   top: 0;
@@ -601,6 +601,10 @@ video.work-video {
   }
 
   /* Styles the about page */
+  #about-page #hero {
+    width: 80%;
+  }
+
   #about-page #hero img {
     grid-row: span 3 / 4;
     grid-column-start: 2;
