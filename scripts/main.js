@@ -50,4 +50,5 @@ function anchorLink() {
   mainNav.style.transition = "0.4s ease-out";
   mainNav.style.height = "80px";
   mainNav.removeChild(contactMe);
+  closeMenu();
 }
