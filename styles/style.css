@@ -495,7 +495,7 @@ video.work-video {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
   #close-btn {
     align-self: center;
     display: none;
