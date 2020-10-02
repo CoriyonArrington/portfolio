@@ -15,22 +15,35 @@ function debounce(func, wait = 10, immediate = true) {
   };
 }
 
-let scrollPos = 0;
+let scrollPos = 5;
 let scrollTimer = -5;
+const img = new Image();
 
 function checkPosition() {
   let windowY = window.pageYOffset;
+
+  img.src = "../images/about-me.png";
   if (windowY <= scrollPos) {
     // Scrolling UP
     mainNav.classList.add("is-visible");
     mainNav.classList.remove("is-hidden");
-    mainNav.classList.add("filled");
-    mainNav.classList.remove("transparent");
+    // mainNav.classList.add('filled');
+    img.onload = function () {
+      const width = img.width;
+      const height = img.height;
+      console.log(height, scrollPos);
+      if (scrollPos > height) {
+        mainNav.classList.add("filled");
+        mainNav.classList.remove("transparent");
+      } else {
+        mainNav.classList.add("transparent");
+        mainNav.classList.remove("filled");
+      }
+    };
   } else {
     // Scrolling DOWN
     mainNav.classList.add("is-hidden");
     mainNav.classList.remove("is-visible");
-    mainNav.classList.add("transparent");
     mainNav.classList.remove("filled");
   }
 

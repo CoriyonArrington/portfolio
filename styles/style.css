@@ -227,6 +227,7 @@ span.fas {
   align-items: flex-start;
   margin: 80px auto auto;
   min-height: calc(100% - 80px);
+  height: 100vh;
 }
 
 #hero h1 {
@@ -495,7 +496,7 @@ video.work-video {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
   #close-btn {
     align-self: center;
     display: none;
@@ -615,6 +616,10 @@ video.work-video {
   #about-page #hero .cta {
     justify-content: center;
     width: 80%;
+    height: 80px;
+  }
+  #about-page #hero a {
+    align-items: center;
   }
 
   #about-content {
