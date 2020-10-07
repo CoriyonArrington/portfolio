@@ -2,8 +2,19 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "cSpell.words": [
+        "Creately",
+        "Favicons",
+        "Figma",
+        "Useberry",
+        "Wireframe",
+        "Xtensio",
         "crossorigin",
+        "hifi",
         "minlen",
-        "playsinline"
+        "moodboard",
+        "nunitosans",
+        "playsinline",
+        "semibold",
+        "wireframes"
     ]
 }

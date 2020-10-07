@@ -46,55 +46,72 @@
   <body>
     <!-- this is the page container -->
     <div id="case-study" class="page-container">
-      <!-- this is the mobile nav -->
-      <header>
-        <nav id="main-nav">
-          <a href="/">
-            <img class="logo" src="../images/logo.svg" alt="avatar" />
-          </a>
-          <ul id="menu-list">
-            <li>
-              <a href="../#work" class="menu-item" onclick="anchorLink()"
-                >Work</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://drive.google.com/file/d/1M7H-2m9ikijQIYVl05t4rOsxvCb0bqWX/view?usp=sharing"
-                target="_blank"
-                class="menu-item"
-                >Resume</a
-              >
-            </li>
-            <li><a href="../about" class="menu-item">About</a></li>
-            <li>
-              <a href="#contact" class="menu-item" onclick="anchorLink()"
-                >Contact</a
-              >
-            </li>
-          </ul>
-          <a
-            href="javascript:void(0);"
-            id="menu-btn"
-            onclick="openMenu()"
-            aria-label="menu button"
-            tabindex="0"
-          >
-            <span class="fas fa-bars fa-2x"></span>
-          </a>
-          <a
-            href="javascript:void(0);"
-            id="close-btn"
-            onclick="closeMenu()"
-            aria-label="close button"
-            tabindex="0"
-          >
-            <span class="far fa-window-close fa-2x"></span>
-          </a>
-        </nav>
+      <header id="main-nav" class="main-nav">
+        <!-- main logo to go back to home page -->
+        <a href="/" class="logo"
+          ><img src="../images/logo.svg" alt="avatar"
+        /></a>
+        <!-- this creates the menu and close icon -->
+        <div id="menu-icon-container" class="menu-icon-container">
+          <span class="bar1"></span>
+          <span class="bar2"></span>
+          <span class="bar3"></span>
+        </div>
+        <!-- this holds the nav overlay -->
+        <div id="nav-overlay" class="overlay">
+          <nav class="overlay-content">
+            <a href="../#work" onclick="anchorLink()">Work</a>
+            <a
+              href="https://drive.google.com/file/d/1M7H-2m9ikijQIYVl05t4rOsxvCb0bqWX/view?usp=sharing"
+              target="_blank"
+              >Resume</a
+            >
+            <a href="../about" onclick="anchorLink()">About</a>
+            <a href="#contact" onclick="anchorLink()">Contact</a>
+          </nav>
+        </div>
       </header>
 
-      <!-- this is the main content -->
+      <header id="project-nav">
+        <a
+          href="javascript:void(0);"
+          id="sort-icon"
+          class="sort-icon"
+          aria-label="sort button"
+          tabindex="0"
+        >
+          <span class="fas fa-sort fa-2x"></span>
+        </a>
+        <div id="project-nav-overlay" class="overlay">
+          <nav class="overlay-content">
+            <a href="#summary" class="project-item" onclick="anchorLink()"
+              >Summary</a
+            >
+            <a
+              href="#discovery-research"
+              class="project-item"
+              onclick="anchorLink()"
+              >User Research</a
+            >
+            <a
+              href="#information-architecture"
+              class="project-item"
+              onclick="anchorLink()"
+              >Architecture</a
+            >
+            <a href="#visual-design" class="project-item" onclick="anchorLink()"
+              >Visual Design</a
+            >
+            <a
+              href="#prototype-solution"
+              class="project-item"
+              onclick="anchorLink()"
+              >Prototype</a
+            >
+          </nav>
+        </div>
+      </header>
+
       <main>
         <!-- progress bar -->
         <div class="progress">
@@ -104,29 +121,31 @@
         </div>
 
         <!-- hero -->
-        <section class="hero">
-          <h2>FindBlack</h2>
-          <p>
-            FindBlack allows users to easily find, save, and share black-owned
-            businesses.
-          </p>
-          <div class="project-example">
-            <img
-              src="../images/case-study-example-4.png"
-              alt="app screenshots"
-            />
-          </div>
-          <a
-            href="https://www.figma.com/proto/AP3NYLkNzGm00SJZg4KlMS/Capstone-Project?node-id=221%3A2560&viewport=1134%2C701%2C0.21786345541477203&scaling=scale-down&hotspot-hints=0&hide-ui=1"
-            target="_blank"
-            aria-label="prototype"
-          >
-            <button type="button" class="primary">View Prototype</button>
-          </a>
-        </section>
+        <div class="hero">
+          <section class="hero-content">
+            <h2>FindBlack</h2>
+            <p>
+              FindBlack allows users to easily find, save, and share black-owned
+              businesses.
+            </p>
+            <div>
+              <img
+                src="../images/case-study-example-4.png"
+                alt="app screenshots"
+              />
+            </div>
+            <a
+              href="https://www.figma.com/proto/AP3NYLkNzGm00SJZg4KlMS/Capstone-Project?node-id=221%3A2560&viewport=1134%2C701%2C0.21786345541477203&scaling=scale-down&hotspot-hints=0&hide-ui=1"
+              target="_blank"
+              aria-label="prototype"
+            >
+              <button type="button" class="primary">View Prototype</button>
+            </a>
+          </section>
+        </div>
 
         <!-- summary specs -->
-        <section class="project-summary">
+        <section class="summary-specs">
           <div>
             <h3>Deliverables</h3>
             <ul>
@@ -198,16 +217,6 @@
             </ol>
           </section>
 
-          <!-- assumptions -->
-          <section class="project">
-            <h3>Assumptions</h3>
-            <ol>
-              <li>People want to support black businesses</li>
-              <li>They want to share resources and information easily.</li>
-              <li>Some audiences feel alienated.</li>
-            </ol>
-          </section>
-
           <!-- solutions -->
           <section class="project">
             <h3>Solutions</h3>
@@ -225,20 +234,24 @@
                 added.
               </li>
             </ol>
-            <div class="project-example">
-              <img
-                src="../images/case-study-example-5.png"
-                alt="app screenshots"
-              />
-            </div>
-            <a
-              href="https://www.figma.com/proto/AP3NYLkNzGm00SJZg4KlMS/Capstone-Project?node-id=221%3A2560&viewport=1134%2C701%2C0.21786345541477203&scaling=scale-down&hotspot-hints=0&hide-ui=1"
-              target="_blank"
-              aria-label="prototype"
-            >
-              <button type="button" class="primary">View Prototype</button>
-            </a>
           </section>
+        </section>
+
+        <!-- final prototype -->
+        <section class="final-product">
+          <div class="project-example">
+            <img
+              src="../images/case-study-example-5.png"
+              alt="app screenshots"
+            />
+          </div>
+          <a
+            href="https://www.figma.com/proto/AP3NYLkNzGm00SJZg4KlMS/Capstone-Project?node-id=221%3A2560&viewport=1134%2C701%2C0.21786345541477203&scaling=scale-down&hotspot-hints=0&hide-ui=1"
+            target="_blank"
+            aria-label="prototype"
+          >
+            <button type="button" class="primary">View Prototype</button>
+          </a>
         </section>
 
         <!-- discovery & research -->
@@ -258,35 +271,40 @@
               difficult to say the least. So, the user survey helped me to get
               insight.
             </p>
-            <div class="project-example">
-              <h4>Survey Highlights</h4>
-              <h5>Out of 65 participants</h5>
-              <p>
-                <span>95% </span>of people would use a tool designed primarily
-                for finding black-owned businesses.
-              </p>
-              <p>
-                <span>70% </span> of those who searched for a black business
-                before said they search at least two times a month.
-              </p>
-              <p>
-                <span>57% </span>said that finding black businesses was very
-                hard or somewhat difficult.
-              </p>
-              <p>
-                <span>Searching by business type </span> was the top requested
-                feature.
-              </p>
-              <p>
-                <span>Incorrect search results </span>ranked as a top pain
-                point.
-              </p>
-            </div>
             <p>
-              This showed me that there was a need for people to find
-              black-owned businesses and there is an opportunity to improve the
-              experience.
+              It showed me that there was a need for people to find black-owned
+              businesses and there is an opportunity to improve the experience.
             </p>
+            <div class="project-example survey-highlights col2">
+              <div>
+                <h3>95%</h3>
+                <p>
+                  of people would use a tool designed primarily for finding
+                  black-owned businesses.
+                </p>
+              </div>
+              <div>
+                <h3>78%</h3>
+                <p>
+                  of those who searched for a black business before said they
+                  search at least two times a month.
+                </p>
+              </div>
+              <div>
+                <h3>58%</h3>
+                <p>
+                  gave a rating of 1 or 2 out of 5 with 5 being very easy to
+                  find.
+                </p>
+              </div>
+              <div>
+                <h3>87%</h3>
+                <p>Searching by business type was the top requested feature.</p>
+              </div>
+              <div>
+                <h5>Out of 65 participants</h5>
+              </div>
+            </div>
             <a
               href="https://docs.google.com/document/d/1__Q_Ik1gd7xruuSp9oOc4BBIRVngM4YtP43vdv7EG_c/edit?usp=sharing"
               target="_blank"
@@ -317,16 +335,28 @@
               type of business were usually not designed very well or had many
               bugs. I was able to narrow down my competitors to the three below.
             </p>
-            <div class="project-example col3">
-              <img src="../images/webuyblack.png" alt="We Buy Black" />
-              <img src="../images/iamblack.png" alt="I am Black Business" />
-              <img
-                src="../images/blackwallstreet.png"
-                alt="Official Black Wall Street"
-              />
-              <h4>We Buy Black</h4>
-              <h4>I am Black Business</h4>
-              <h4>Official Black Wall Street</h4>
+            <div class="project-example col2">
+              <section class="competitors">
+                <img
+                  src="../images/iamblack.png"
+                  class="avatar"
+                  alt="I Am Black Business"
+                />
+                <h4>I Am Black Business</h4>
+                <img
+                  src="../images/iamblack-product.png"
+                  alt="I Am Black Business Product"
+                />
+              </section>
+              <section class="competitors">
+                <img
+                  src="../images/blackwallstreet.png"
+                  class="avatar"
+                  alt="Official Black Wall Street"
+                />
+                <h4>Official Black Wall Street</h4>
+                <img src="../images/blackwallstreet-product.png" alt="" />
+              </section>
             </div>
             <p>
               This was important because it gave me a baseline to work from. I'm
@@ -337,13 +367,6 @@
               bar, and business cards showing the business info. Going into the
               project, I knew I would test and incorporate these aspects.
             </p>
-            <div class="project-example col2">
-              <img
-                src="../images/iamblack-product.png"
-                alt="I am Black Business Product"
-              />
-              <img src="../images/blackwallstreet-product.png" alt="" />
-            </div>
             <a
               href="https://coriyonarrington.xtensio.com/pbrs8txg"
               target="_blank"
@@ -365,7 +388,7 @@
               showed me that the app would be primarily designed for them.
             </p>
             <div class="project-example col2">
-              <div class="persona">
+              <section class="persona">
                 <img src="../images/persona-jonesha.png" alt="user persona" />
                 <h4>Jonesha</h4>
                 <h5>24 / Social Media Manager</h5>
@@ -378,10 +401,8 @@
                   effectively.
                 </p>
                 <p>
-                  <span>
-                    "We just need an organized way of seeing things. Instead of
-                    word of mouth or asking online Facebook groups.""
-                  </span>
+                  We just need an organized way of seeing things. Instead of
+                  word of mouth or asking online Facebook groups.
                 </p>
                 <h4>Frustrations</h4>
                 <p>
@@ -389,25 +410,22 @@
                   many of the websites/apps I have tried are either limited to a
                   certain region or there is not much information on there.
                 </p>
-              </div>
-              <div class="persona">
+              </section>
+              <section class="persona">
                 <img src="../images/persona-jessie.png" alt="user persona" />
                 <h4>Jessie</h4>
                 <h5>22 / Content Specialist</h5>
                 <h4>Goals</h4>
                 <p>
-                  With everything that has been happening, I want to do my part
-                  and help support the black community. One of the easiest ways
-                  I know to do that is by buying their products. Personally, I
-                  would use an app to find black-owned businesses so I can buy
-                  jewelry and clothes mostly. It'll also help me curate content
-                  to showcase their work!
+                  I want to do my part and help support the black community. One
+                  of the easiest ways I know to do that is by buying their
+                  products. Personally, I would use an app to find black-owned
+                  businesses so I can buy jewelry and clothes. It'll help me
+                  curate content to showcase their work!
                 </p>
                 <p>
-                  <span>
-                    "The ability to go to one place instead of going to multiple
-                    pages to find a good brand or business to purchase from."
-                  </span>
+                  The ability to go to one place instead of going to multiple
+                  pages to find a good brand or business to purchase from.
                 </p>
                 <h4>Frustrations</h4>
                 <p>
@@ -415,7 +433,7 @@
                   which feels like information overload and it's often the same
                   businesses.
                 </p>
-              </div>
+              </section>
             </div>
           </section>
         </section>
@@ -424,8 +442,8 @@
         <section id="information-architecture">
           <h2>Information Architecture</h2>
 
+          <!-- user stories and flows -->
           <section class="project">
-            <!-- user stories and flows -->
             <h3>User Stories and Flows</h3>
             <p>
               Now that it's been confirmed that there is a need and the audience
@@ -469,8 +487,8 @@
             </a>
           </section>
 
+          <!-- digital wireframes -->
           <section class="project">
-            <!-- digital wireframes -->
             <h3>Digital Wireframes</h3>
             <p>
               Once the user flows were complete, it was time to hit the drawing
@@ -512,8 +530,8 @@
         <section id="visual-design">
           <h2>Visual Design</h2>
 
+          <!-- brand characteristics -->
           <section class="project">
-            <!-- brand characteristics -->
             <h3>Brand Characteristics</h3>
             <p>
               FindBlack was inspired by George Floyd and the different shades of
@@ -525,8 +543,8 @@
             </div>
           </section>
 
+          <!-- color palette -->
           <section class="project">
-            <!-- color palette -->
             <h3>Color</h3>
             <p>
               Sinopia #C04F27 Cultured #F5F5F5, the top two colors were chosen
@@ -543,8 +561,8 @@
             </div>
           </section>
 
+          <!-- logo design and process -->
           <section class="project">
-            <!-- logo design and process -->
             <h3>Logo Design</h3>
             <p>
               The logo was designed with the well-known resist fist. It's a
@@ -566,7 +584,7 @@
         </section>
 
         <!-- prototype and conclusion -->
-        <section id="prototype-solution">
+        <section>
           <!-- iterations -->
           <section class="project">
             <h2>Iterations</h2>
@@ -576,7 +594,7 @@
               showcasing the iterations it went through and changes that were
               made.
             </p>
-            <div class="project-example col2">
+            <div class="project-example col2 flex-row">
               <img
                 src="../images/findblack-feedback-1.png"
                 alt="feedback example"
@@ -596,7 +614,7 @@
               changed it from "skip" to "browse as guest" to make the action
               more clear.
             </p>
-            <div class="project-example col2">
+            <div class="project-example col2 flex-row">
               <img
                 src="../images/findblack-feedback-3.png"
                 alt="feedback example"
@@ -637,7 +655,7 @@
           </section>
 
           <!-- prototype -->
-          <section class="project">
+          <section id="prototype-solution" class="project">
             <h2>Prototype</h2>
             <p>
               Below is the current version included changes based on user
@@ -693,8 +711,8 @@
           </section>
         </section>
 
-        <!-- contact me -->
-        <section id="contact">
+        <!-- this section holds the contact me info -->
+        <section id="contact" class="contact">
           <h1>Please, say hi.</h1>
           <h4>
             Thank you for stopping by. If you’d like to chat or work on
@@ -732,7 +750,7 @@
             <button type="submit" class="primary">Send Message</button>
           </form>
 
-          <div id="contact-me">
+          <div id="contact-me" class="contact-me">
             <ul>
               <li>
                 <a
@@ -786,16 +804,15 @@
         </section>
       </main>
 
-      <!-- this is the footer content -->
       <footer>
         <span class="fas fa-copyright"></span>
-        <h5>2020 Designed and Developed by Coriyon A.</h5>
+        <h5>2020 Designed and Developed by Coriyon</h5>
       </footer>
     </div>
     <script src="../scripts/main.js"></script>
-    <script src="../scripts/nav.js"></script>
-    <script src="../scripts/zenscroll-min.js"></script>
+    <script src="../scripts/project-menu.js"></script>
     <script src="../scripts/progress.js"></script>
+    <script src="../scripts/zenscroll-min.js"></script>
     <script
       src="https://kit.fontawesome.com/58e13ba0ad.js"
       crossorigin="anonymous"

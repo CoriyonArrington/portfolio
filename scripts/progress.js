@@ -1,9 +1,9 @@
 // When the user scrolls the page, execute myFunction
 window.onscroll = function () {
-  myFunction();
+  progressBar();
 };
 
-function myFunction() {
+function progressBar() {
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   var height =
     document.documentElement.scrollHeight -

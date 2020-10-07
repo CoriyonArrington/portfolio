@@ -45,150 +45,109 @@
   <body>
     <!-- this is the page container -->
     <div id="home-page" class="page-container">
-      <header>
-        <nav id="main-nav">
-          <a href="./">
-            <img class="logo" src="images/logo.svg" alt="avatar" />
-          </a>
-          <ul id="menu-list">
-            <li>
-              <a href="#work" class="menu-item" onclick="anchorLink()">Work</a>
-            </li>
-            <li>
-              <a
-                href="https://drive.google.com/file/d/19aTHYcljOHBnPDwm6xRBw5cZCNq-qooP/view?usp=sharing"
-                target="_blank"
-                class="menu-item"
-                >Resume</a
-              >
-            </li>
-            <li><a href="about" class="menu-item">About</a></li>
-            <li>
-              <a href="#contact" class="menu-item" onclick="anchorLink()"
-                >Contact</a
-              >
-            </li>
-          </ul>
-          <a
-            href="javascript:void(0);"
-            id="menu-btn"
-            onclick="openMenu()"
-            aria-label="menu button"
-            tabindex="0"
-          >
-            <span class="fas fa-bars fa-2x"></span>
-          </a>
-          <a
-            href="javascript:void(0);"
-            id="close-btn"
-            onclick="closeMenu()"
-            aria-label="close button"
-            tabindex="0"
-          >
-            <span class="far fa-window-close fa-2x"></span>
-          </a>
-        </nav>
+      <header id="main-nav" class="main-nav">
+        <!-- main logo to go back to home page -->
+        <a href="./" class="logo"><img src="images/logo.svg" alt="avatar" /></a>
+        <!-- this creates the menu and close icon -->
+        <div id="menu-icon-container" class="menu-icon-container">
+          <span class="bar1"></span>
+          <span class="bar2"></span>
+          <span class="bar3"></span>
+        </div>
+        <!-- this holds the nav overlay -->
+        <div id="nav-overlay" class="overlay">
+          <nav class="overlay-content">
+            <a href="#work" onclick="anchorLink()">Work</a>
+            <a
+              href="https://drive.google.com/file/d/1M7H-2m9ikijQIYVl05t4rOsxvCb0bqWX/view?usp=sharing"
+              target="_blank"
+              >Resume</a
+            >
+            <a href="about">About</a>
+            <a href="#contact" onclick="anchorLink()">Contact</a>
+          </nav>
+        </div>
       </header>
 
       <main>
         <!-- this section holds the hero content -->
-        <section id="hero">
-          <h1>Hi, I'm Coriyon</h1>
-          <h4>
-            I’m a UX Designer based in Austin, Texas. I deliver beautiful,
-            intuitive online experiences through solid research and thoughtful
-            design.
-          </h4>
-          <div id="contact-me">
-            <ul>
-              <li>
-                <a
-                  href="tel:+15123640962"
-                  onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"
-                  ><span class="fas fa-phone-alt fa-2x"></span
-                ></a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/coriyonarrington/"
-                  target="_blank"
-                  aria-label="LinkedIn"
-                  ><span class="fab fa-linkedin fa-2x"></span
-                ></a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/CoriyonArrington"
-                  target="_blank"
-                  aria-label="GitHub"
-                  ><span class="fab fa-github fa-2x"></span
-                ></a>
-              </li>
-              <li>
-                <a
-                  href="https://www.facebook.com/coriyon"
-                  target="_blank"
-                  aria-label="Facebook"
-                  ><span class="fab fa-facebook-square fa-2x"></span
-                ></a>
-              </li>
-              <li>
-                <a
-                  href="https://twitter.com/TheCoriSmoove"
-                  target="_blank"
-                  aria-label="Twitter"
-                  ><span class="fab fa-twitter-square fa-2x"></span
-                ></a>
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com/coriyonnn/"
-                  target="_blank"
-                  aria-label="Instagram"
-                  ><span class="fab fa-instagram fa-2x"></span
-                ></a>
-              </li>
-            </ul>
-          </div>
-          <div class="cta">
-            <a href="#work">
-              <button type="button" class="primary">Projects</button>
-            </a>
-            <a
-              href="https://drive.google.com/file/d/19aTHYcljOHBnPDwm6xRBw5cZCNq-qooP/view?usp=sharing"
-              target="_blank"
-            >
-              <button type="button" class="secondary">Resume</button>
-            </a>
-          </div>
-          <img src="images/about-me.png" class="hero-bg" alt="background" />
-        </section>
+        <div id="hero" class="hero">
+          <section class="hero-content">
+            <h1>Hi, I'm Coriyon</h1>
+            <h4>
+              I’m a UX Designer based in Austin, Texas. I deliver beautiful,
+              intuitive online experiences through solid research and thoughtful
+              design.
+            </h4>
+            <div class="cta">
+              <a href="#work">
+                <button type="button" class="primary">Projects</button>
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1M7H-2m9ikijQIYVl05t4rOsxvCb0bqWX/view?usp=sharing"
+                target="_blank"
+              >
+                <button type="button" class="secondary">Resume</button>
+              </a>
+            </div>
+            <div id="contact-me" class="contact-me">
+              <ul>
+                <li>
+                  <a
+                    href="tel:+15123640962"
+                    onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});"
+                    ><span class="fas fa-phone-alt fa-2x"></span
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/coriyonarrington/"
+                    target="_blank"
+                    aria-label="LinkedIn"
+                    ><span class="fab fa-linkedin fa-2x"></span
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/CoriyonArrington"
+                    target="_blank"
+                    aria-label="GitHub"
+                    ><span class="fab fa-github fa-2x"></span
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/coriyon"
+                    target="_blank"
+                    aria-label="Facebook"
+                    ><span class="fab fa-facebook-square fa-2x"></span
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://twitter.com/TheCoriSmoove"
+                    target="_blank"
+                    aria-label="Twitter"
+                    ><span class="fab fa-twitter-square fa-2x"></span
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/coriyonnn/"
+                    target="_blank"
+                    aria-label="Instagram"
+                    ><span class="fab fa-instagram fa-2x"></span
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <div class="bg-image"></div>
+        </div>
 
         <!-- this section holds the case study content -->
         <section id="work">
           <!-- project-one goes here -->
-          <section class="work-example">
-            <h2>Eclips Storage</h2>
-            <h4>
-              A cloud storage app for users to quickly save, organize, and share
-              their favorite content from GIFs to videos.
-            </h4>
-            <video
-              class="work-video"
-              poster="images/mobile-dashboard.png"
-              playsinline
-              autoplay
-              muted
-              loop
-            >
-              <source src="videos/hifi-mockup-share.mp4" type="video/mp4" />
-            </video>
-            <a href="work/eclips-storage.html">
-              <button type="button" class="primary">View Case Study</button>
-            </a>
-          </section>
-
-          <!-- project-two goes here -->
           <section class="work-example">
             <h2>FindBlack</h2>
             <h4>
@@ -196,7 +155,7 @@
               save, and share their favorite black-owned places.
             </h4>
             <video
-              class="work-video"
+              class="work-example-video"
               poster="images/mobile-dashboard.png"
               playsinline
               autoplay
@@ -211,8 +170,30 @@
           </section>
         </section>
 
+        <!-- project-two goes here -->
+        <section class="work-example">
+          <h2>Eclips Storage</h2>
+          <h4>
+            A cloud storage app for users to quickly save, organize, and share
+            their favorite content from GIFs to videos.
+          </h4>
+          <video
+            class="work-example-video"
+            poster="images/mobile-dashboard.png"
+            playsinline
+            autoplay
+            muted
+            loop
+          >
+            <source src="videos/hifi-mockup-share.mp4" type="video/mp4" />
+          </video>
+          <a href="work/eclips-storage.html">
+            <button type="button" class="primary">View Case Study</button>
+          </a>
+        </section>
+
         <!-- this section holds the contact me info -->
-        <section id="contact">
+        <section id="contact" class="contact">
           <h1>Please, say hi.</h1>
           <h4>
             Thank you for stopping by. If you’d like to chat or work on
@@ -250,7 +231,7 @@
             <button type="submit" class="primary">Send Message</button>
           </form>
 
-          <div id="contact-me">
+          <div id="contact-me" class="contact-me">
             <ul>
               <li>
                 <a
@@ -305,11 +286,11 @@
       </main>
       <footer>
         <span class="fas fa-copyright"></span>
-        <h5>2020 Designed and Developed by Coriyon A.</h5>
+        <h5>2020 Designed and Developed by Coriyon</h5>
       </footer>
     </div>
     <script src="scripts/main.js"></script>
-    <script src="scripts/nav.js"></script>
+    <script src="scripts/menu.js"></script>
     <script src="scripts/zenscroll-min.js"></script>
     <script
       src="https://kit.fontawesome.com/58e13ba0ad.js"

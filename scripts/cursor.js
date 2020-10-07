@@ -7,7 +7,7 @@ document.getElementsByTagName("body")[0].appendChild(dot1);
 document.getElementsByTagName("body")[0].appendChild(dot2);
 
 var cursor = {
-  delay: 8,
+  delay: 0,
   _x: 0,
   _y: 0,
   endX: window.innerWidth / 2,
@@ -31,11 +31,11 @@ var cursor = {
 
     // Anchor hovering
     document.querySelectorAll("a").forEach(function (el) {
-      el.addEventListener("mouseover", function () {
+      el.addEventListener("hover", function () {
         self.cursorEnlarged = true;
         self.toggleCursorSize();
       });
-      el.addEventListener("mouseout", function () {
+      el.addEventListener("hover", function () {
         self.cursorEnlarged = false;
         self.toggleCursorSize();
       });
