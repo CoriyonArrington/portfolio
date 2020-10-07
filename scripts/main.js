@@ -1,54 +1,51 @@
-// this opens and closes the mobile nav menu while preventing body scrolling
-let menuItem = document.getElementsByClassName("menu-item");
-let contactMe = document.getElementById("contact-me");
-let mainNav = document.getElementById("main-nav");
-let menuList = document.getElementById("menu-list");
-let menuBtn = document.getElementById("menu-btn");
-let closeBtn = document.getElementById("close-btn");
-let contact = document.getElementById("contact");
-let html = document.getElementById("html");
+// this hides and shows the nav
+function debounce(func, wait = 10, immediate = true) {
+  let timeout;
+  return function () {
+    let context = this,
+      args = arguments;
+    let later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    let callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
 
-var i;
+let scrollPos = 5;
+let scrollTimer = -5;
+const img = new Image();
 
-function openMenu() {
-  for (i = 0; i < menuItem.length; i++) {
-    menuItem[i].style.display = "block";
+// this hides and shows the nav bar while scrolling
+function checkPosition() {
+  let windowY = window.pageYOffset;
+  let mainNav = document.getElementById("main-nav");
+
+  img.src = "../images/about-me.png";
+  if (windowY <= scrollPos) {
+    // Scrolling UP
+    mainNav.classList.add("is-visible");
+    mainNav.classList.remove("is-hidden");
+    img.onload = function () {
+      if (windowY > 5) {
+        mainNav.classList.add("is-filled");
+        mainNav.classList.remove("is-transparent");
+      } else {
+        mainNav.classList.add("is-transparent");
+        mainNav.classList.remove("is-filled");
+      }
+    };
+  } else {
+    // Scrolling DOWN
+    mainNav.classList.add("is-hidden");
+    mainNav.classList.remove("is-visible");
+    mainNav.classList.remove("is-filled");
   }
 
-  mainNav.style.height = "100%";
-  closeBtn.style.display = "flex";
-  menuBtn.style.display = "none";
-  mainNav.style.backgroundColor = "#000000";
-  mainNav.style.gridTemplateRows = "80px 2fr 1fr";
-  menuList.style.display = "block";
-  mainNav.appendChild(contactMe);
-  contactMe.style.display = "grid";
-  contactMe.style.padding = "4%";
-  contactMe.style.gridColumn = "1 / span 2";
-  mainNav.style.transition = "0.4s ease-in";
-  html.style.overflow = "hidden";
+  scrollPos = windowY;
 }
 
-function closeMenu() {
-  for (i = 0; i < menuItem.length; i++) {
-    menuItem[i].style.display = "none";
-  }
-
-  mainNav.style.transition = "0.4s ease-out";
-  mainNav.style.height = "80px";
-  mainNav.style.alignItems = "center";
-  mainNav.style.gridTemplateRows = "auto";
-  closeBtn.style.display = "none";
-  html.style.overflow = "visible";
-  menuBtn.style.display = "flex";
-  mainNav.removeChild(contactMe);
-  menuList.style.display = "none";
-}
-
-// this allows the mobile menu anchor links to navigate properly
-function anchorLink() {
-  mainNav.style.transition = "0.4s ease-out";
-  mainNav.style.height = "80px";
-  mainNav.removeChild(contactMe);
-  closeMenu();
-}
+window.addEventListener("scroll", debounce(checkPosition));
