@@ -186,9 +186,8 @@ section video {
 /* Styles the main navigation header */
 .main-nav {
   align-items: center;
-  background-color: transparent;
   display: flex;
-  height: 80px;
+  height: 64px;
   justify-content: space-between;
   left: 0;
   /* padding / margin is subject to change but must match page-container padding */
@@ -200,7 +199,7 @@ section video {
 }
 
 .main-nav.is-filled {
-  background-color: #000;
+  background: rgba(0, 0, 0, 0.92);
 }
 
 .main-nav.is-hidden {
@@ -218,9 +217,10 @@ section video {
 }
 
 .logo {
+  height: 40px;
   margin: 0;
   padding: 0;
-  width: 48px;
+  width: 40px;
   z-index: 8888;
 }
 
@@ -234,10 +234,10 @@ section video {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 48px;
+  height: 40px;
   margin: 0;
   padding: 0;
-  width: 48px;
+  width: 40px;
 }
 
 .bar1,
@@ -245,14 +245,14 @@ section video {
 .bar3 {
   background-color: #fff;
   color: #fff;
-  height: 4px;
+  height: 2px;
   transition: 0.4s ease-in;
-  width: 40px;
+  width: 32px;
   z-index: 8888;
 }
 
 .change .bar1 {
-  transform: rotate(-45deg) translate(-7px, 10px);
+  transform: rotate(-45deg) translate(-8px, 8px);
 }
 
 .change .bar2 {
@@ -260,11 +260,10 @@ section video {
 }
 
 .change .bar3 {
-  transform: rotate(45deg) translate(-8px, -10px);
+  transform: rotate(45deg) translate(-6px, -6px);
 }
 
 .overlay {
-  background-color: #000;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -294,6 +293,10 @@ section video {
   font-size: 1.5rem;
 }
 
+.overlay.black-background {
+  background-color: #000;
+}
+
 .overlay.on {
   width: 100%;
 }
@@ -316,10 +319,6 @@ section video {
   width: 100%;
 }
 
-.cta {
-  display: flex;
-}
-
 .hero {
   display: flex;
   height: 100%;
@@ -336,10 +335,6 @@ section video {
   z-index: 16;
 }
 
-.hero #contact-me {
-  display: none;
-}
-
 .hero::after {
   background: rgba(0, 0, 0, 0.5);
   content: "";
@@ -349,6 +344,14 @@ section video {
   top: 0;
   width: 100%;
   z-index: 10;
+}
+
+.cta {
+  display: flex;
+}
+
+.hero #contact-me {
+  display: none;
 }
 
 /* Styles the work section */
@@ -381,6 +384,10 @@ section video {
   justify-content: space-evenly;
   list-style: none;
   width: 100%;
+}
+
+.contact-me li {
+  font-size: 0.8rem;
 }
 
 .contact-me a {
@@ -439,7 +446,7 @@ footer {
 }
 
 .progress-bar {
-  background: #e6b900;
+  background: #fff9e0;
   height: 4px;
   margin: 0;
   padding: 0;
@@ -538,18 +545,22 @@ footer {
 
 .sort-icon {
   align-items: center;
-  background-color: #fff;
+  background-color: #ffc900;
   border-radius: 50rem;
-  bottom: 1.5rem;
+  bottom: 2rem;
   display: flex;
   height: 48px;
   justify-content: center;
   margin: 0;
   padding: 0;
   position: fixed;
-  right: 1.5rem;
+  right: 1rem;
   width: 48px;
   z-index: 6666;
+}
+
+.sort-icon span {
+  color: #fff9e0;
 }
 
 .survey-highlights,
@@ -561,21 +572,21 @@ footer {
   color: #ffc900;
 }
 
-@media screen and (min-width: 411px) {
-  html {
-    font-size: 112.5%;
-  }
-}
-
 @media screen and (min-width: 768px) {
   /* Styles the main navigation header */
   .menu-icon-container {
-    display: none;
+    height: 0;
+    position: fixed;
+    right: 30%;
+    top: 30%;
+  }
+
+  .menu-icon-container.display {
+    height: 40px;
   }
 
   #main-nav .overlay {
     align-items: flex-end;
-    background: transparent;
     height: auto;
     position: initial;
     width: 100%;
@@ -658,10 +669,6 @@ footer {
     grid-row: 1 / span 3;
   }
 
-  .contact-me li {
-    font-size: 0.8rem;
-  }
-
   /* Styles the about page */
   #about-page .hero::after {
     background: rgba(0, 0, 0, 0.8);
@@ -686,6 +693,7 @@ footer {
   }
 
   /* Styles the project pages */
+
   p {
     width: 80%;
   }

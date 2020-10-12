@@ -16,16 +16,12 @@ function anchorLink() {
 
 // this opens and loses the project nav menu and prevents body scrolling
 sortIcon.addEventListener("click", function () {
-  let mainNavHidden = mainNav.classList.remove("is-hidden");
-  let mainNavTransparent = mainNav.classList.toggle("is-transparent");
-
-  if (mainNavHidden || mainNavTransparent !== true) {
-    menuIcon.classList.toggle("change");
-    projectNavOverlay.classList.add("on");
-    html.classList.toggle("overflow-hidden");
-  } else {
-    // do nothing
-  }
+  mainNav.classList.remove("is-hidden");
+  menuIcon.classList.toggle("display");
+  menuIcon.classList.toggle("change");
+  projectNavOverlay.classList.add("on");
+  projectNavOverlay.classList.add("black-background");
+  html.classList.toggle("overflow-hidden");
 });
 
 // this opens and loses the mobile nav menu and prevents body scrolling
@@ -34,11 +30,13 @@ menuIcon.addEventListener("click", function () {
 
   if (menuIconClosed === false) {
     menuIcon.classList.remove("change");
+    menuIcon.classList.toggle("display");
     projectNavOverlay.classList.remove("on");
     navOverlay.classList.remove("on");
     html.classList.remove("overflow-hidden");
   } else {
     navOverlay.classList.toggle("on");
+    navOverlay.classList.toggle("black-background");
     navOverlay.appendChild(contactMe);
     html.classList.toggle("overflow-hidden");
   }

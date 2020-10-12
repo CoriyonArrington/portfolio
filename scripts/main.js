@@ -15,34 +15,32 @@ function debounce(func, wait = 10, immediate = true) {
   };
 }
 
-let scrollPos = 5;
+let scrollPos = 0;
 let scrollTimer = -5;
-const img = new Image();
 
 // this hides and shows the nav bar while scrolling
 function checkPosition() {
   let windowY = window.pageYOffset;
   let mainNav = document.getElementById("main-nav");
 
-  img.src = "../images/about-me.png";
-  if (windowY <= scrollPos) {
-    // Scrolling UP
-    mainNav.classList.add("is-visible");
+  if (windowY <= 0) {
+    // Scroll is at the top
     mainNav.classList.remove("is-hidden");
-    img.onload = function () {
-      if (windowY > 5) {
-        mainNav.classList.add("is-filled");
-        mainNav.classList.remove("is-transparent");
-      } else {
-        mainNav.classList.add("is-transparent");
-        mainNav.classList.remove("is-filled");
-      }
-    };
+    mainNav.classList.add("is-visible");
+    mainNav.classList.remove("is-filled");
+    mainNav.classList.add("is-transparent");
+  } // Scrolling UP
+  else if (windowY <= scrollPos) {
+    mainNav.classList.remove("is-hidden");
+    mainNav.classList.add("is-visible");
+    mainNav.classList.add("is-filled");
+    mainNav.classList.remove("is-transparent");
   } else {
     // Scrolling DOWN
     mainNav.classList.add("is-hidden");
     mainNav.classList.remove("is-visible");
-    mainNav.classList.remove("is-filled");
+    mainNav.classList.add("is-filled");
+    mainNav.classList.remove("is-transparent");
   }
 
   scrollPos = windowY;
