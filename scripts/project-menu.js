@@ -20,7 +20,6 @@ sortIcon.addEventListener("click", function () {
   menuIcon.classList.toggle("display");
   menuIcon.classList.toggle("change");
   projectNavOverlay.classList.add("on");
-  projectNavOverlay.classList.add("black-background");
   html.classList.toggle("overflow-hidden");
 });
 
@@ -36,7 +35,6 @@ menuIcon.addEventListener("click", function () {
     html.classList.remove("overflow-hidden");
   } else {
     navOverlay.classList.toggle("on");
-    navOverlay.classList.toggle("black-background");
     navOverlay.appendChild(contactMe);
     html.classList.toggle("overflow-hidden");
   }

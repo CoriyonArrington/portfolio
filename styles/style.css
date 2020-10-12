@@ -293,11 +293,8 @@ section video {
   font-size: 1.5rem;
 }
 
-.overlay.black-background {
-  background-color: #000;
-}
-
 .overlay.on {
+  background-color: #000;
   width: 100%;
 }
 
