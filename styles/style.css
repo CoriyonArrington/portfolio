@@ -663,10 +663,7 @@ footer h5 {
 
   .hero #contact-me {
     display: flex;
-  }
-
-  .hero #contact-me ul {
-    justify-content: end;
+    justify-content: flex-end;
   }
 
   .work-example {
@@ -701,6 +698,7 @@ footer h5 {
 
   .contact-me ul {
     justify-content: initial;
+    width: auto;
   }
 
   .contact h4 {
