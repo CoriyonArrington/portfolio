@@ -13,8 +13,8 @@ body {
 }
 
 ::selection {
-  background: #e6b900;
-  color: #000;
+  background: #65c9ff;
+  color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -76,7 +76,6 @@ ul {
   font-size: 1.2rem;
   font-weight: lighter;
   list-style-position: inside;
-  max-width: 75ch;
 }
 
 a,
@@ -95,7 +94,7 @@ p,
 ul,
 video {
   /* padding / margin is subject to change */
-  margin: 0.5rem 0;
+  margin: 1rem 0;
   padding: 0 0.5rem;
 }
 
@@ -156,7 +155,7 @@ span.fab:hover,
 span.fac:hover,
 span.far:hover,
 span.fas:hover {
-  color: #65c9ff;
+  color: #ffcd00;
 }
 
 /*--------------------------------------------------------------
@@ -174,7 +173,7 @@ section {
   display: flex;
   flex-direction: column;
   /* padding / margin is subject to change */
-  margin: 4% 0;
+  margin: 1rem auto;
 }
 
 section a,
@@ -293,6 +292,10 @@ section video {
   font-size: 1.5rem;
 }
 
+.overlay-content a:hover {
+  color: #ffcd00;
+}
+
 .overlay.on {
   background-color: #000;
   width: 100%;
@@ -304,7 +307,7 @@ section video {
 
 /* Styles the home hero section */
 .bg-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("../images/about-me.png");
   background-position: 75%;
   background-repeat: no-repeat;
@@ -321,6 +324,7 @@ section video {
   height: 100%;
   justify-content: space-evenly;
   margin: 0;
+  padding: 0;
   width: 100%;
 }
 
@@ -345,6 +349,7 @@ section video {
 
 .cta {
   display: flex;
+  justify-content: space-around;
 }
 
 .hero #contact-me {
@@ -362,7 +367,13 @@ section video {
 }
 
 .contact h1 {
-  width: 80%;
+  width: 70%;
+}
+
+.contact h1,
+.contact h4 {
+  /* padding / margin is subject to change */
+  margin: 1rem 0;
 }
 
 .contact form button {
@@ -373,13 +384,16 @@ section video {
 .contact-me {
   display: flex;
   /* padding / margin is subject to change */
-  margin-top: 8%;
+  margin: 1rem 0;
+  width: 100%;
 }
 
 .contact-me ul {
   display: flex;
   justify-content: space-evenly;
   list-style: none;
+  margin: 0;
+  padding: 0;
   width: 100%;
 }
 
@@ -420,6 +434,11 @@ footer {
   align-items: center;
   display: flex;
   justify-content: center;
+  margin: 4rem 0 2rem 0;
+}
+
+footer h5 {
+  margin: 0;
 }
 
 /* Styles the progress bar */
@@ -457,10 +476,6 @@ footer {
   justify-content: space-between;
 }
 
-#about-page .cta {
-  align-self: center;
-}
-
 .bg-video {
   height: 100%;
   left: 0;
@@ -485,11 +500,20 @@ footer {
   display: none;
 }
 
-.project {
-  align-items: flex-start;
-  /* padding / margin is subject to change */
-  margin-top: 2%;
+#case-study .work-example {
+  margin-top: 80px;
 }
+
+.project {
+  /* padding / margin is subject to change */
+  margin: 1rem auto 0;
+  width: 100%;
+}
+
+.project li {
+  padding: 0;
+}
+
 .project a,
 .project img {
   margin: 1rem 0;
@@ -524,7 +548,7 @@ footer {
   max-width: 50%;
 }
 
-.project-example.user-flows img {
+.user-flows {
   display: none;
 }
 
@@ -537,6 +561,10 @@ footer {
 }
 
 .persona h4:nth-child(n + 4) {
+  color: #ffcd00;
+}
+
+.competitors h4:nth-child(n + 3) {
   color: #ffcd00;
 }
 
@@ -556,6 +584,10 @@ footer {
   z-index: 6666;
 }
 
+.sort-icon span:hover {
+  color: #000;
+}
+
 .sort-icon span {
   color: #fff9e0;
 }
@@ -570,6 +602,10 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+  p {
+    max-width: 60ch;
+  }
+
   /* Styles the main navigation header */
   .menu-icon-container {
     height: 0;
@@ -591,14 +627,12 @@ footer {
 
   #main-nav .overlay-content {
     flex-direction: row;
+    margin: 0.5rem 0;
+    padding: 0 0.5rem;
   }
 
   #main-nav .overlay-content a {
     font-size: 1rem;
-  }
-
-  .overlay-content a:hover {
-    color: #65c9ff;
   }
 
   /* Styles the home page */
@@ -615,7 +649,11 @@ footer {
   .hero-content h4 {
     justify-content: start;
     grid-column: 1 / span 3;
-    width: 70%;
+    width: 50%;
+  }
+
+  .cta {
+    justify-content: left;
   }
 
   .hero-content .cta {
@@ -624,9 +662,11 @@ footer {
   }
 
   .hero #contact-me {
-    display: block;
-    grid-column: 2;
-    grid-row: 3;
+    display: flex;
+  }
+
+  .hero #contact-me ul {
+    justify-content: end;
   }
 
   .work-example {
@@ -635,35 +675,43 @@ footer {
     grid-template-columns: 1fr 1fr;
   }
 
+  .work-example h2 {
+    align-self: end;
+  }
+
   .work-example h4 {
     width: 88%;
   }
 
   .work-example a {
+    align-self: start;
     grid-column: 1;
     grid-row: 3;
   }
 
-  .work-example video {
+  .work-example video,
+  .work-example img {
     grid-row: span 3 / 4;
     justify-self: center;
   }
 
   .contact {
-    align-items: first baseline;
-    display: grid;
-    grid-column-gap: 16%;
-    grid-template-columns: 1fr 1fr;
-    height: 80vh;
+    align-items: center;
+  }
+
+  .contact-me ul {
+    justify-content: initial;
   }
 
   .contact h4 {
-    width: 90%;
+    width: 70%;
   }
 
   .contact form {
     grid-column: 2;
     grid-row: 1 / span 3;
+    justify-self: center;
+    width: 80%;
   }
 
   /* Styles the about page */
@@ -677,7 +725,7 @@ footer {
   }
   .about-content {
     /* padding / margin is subject to change */
-    margin: 8% 0 auto;
+    margin: 2rem 0 auto;
     width: 80%;
   }
 
@@ -690,33 +738,29 @@ footer {
   }
 
   /* Styles the project pages */
+  #case-study .work-example {
+    min-height: 70vh;
+  }
 
-  p {
+  #summary,
+  .summary-specs,
+  #discovery-research,
+  #information-architecture,
+  #visual-design,
+  #prototype-conclusion {
+    /* padding / margin is subject to change */
+    margin: 1rem auto 0;
     width: 80%;
-  }
-  #case-study .hero-content {
-    grid-template-columns: 1fr 1fr;
-    height: 64vh; /* this height should be equal to or close to height of .work-example from home page */
-  }
-
-  #case-study .hero-content p {
-    grid-column: 1;
-  }
-
-  #case-study .hero-content div {
-    grid-column: 2;
-    grid-row: 1 / span 3;
   }
 
   .project-example img,
   .project-example video {
-    max-width: 50%;
+    max-width: 70%;
   }
 
   .col2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-items: center;
     width: 100%;
   }
 
@@ -728,18 +772,37 @@ footer {
   }
 
   .summary-specs {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid #adacaf;
+    border-top: 1px solid #adacaf;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
   }
 
   .competitors,
   .persona {
-    width: 80%;
+    width: 90%;
+  }
+
+  .competitors img {
+    max-width: 100%;
+  }
+
+  .sort-icon {
+    bottom: 2rem;
+    right: 4rem;
   }
 
   .survey-highlights {
     justify-items: start;
+  }
+
+  .survey-highlights p {
+    width: 80%;
+  }
+
+  .user-flows {
+    display: flex;
   }
 }
 

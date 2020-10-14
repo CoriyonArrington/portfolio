@@ -8,6 +8,7 @@ let mainNav = document.getElementById("main-nav");
 
 // this closes the mobile nav menu after clicking an anchor link and restores overflow
 function anchorLink() {
+  menuIcon.classList.toggle("display");
   menuIcon.classList.remove("change");
   navOverlay.classList.remove("on");
   projectNavOverlay.classList.remove("on");

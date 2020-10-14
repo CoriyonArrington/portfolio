@@ -4,7 +4,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-171395181-1"
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171395181-2"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -13,7 +13,7 @@
       }
       gtag("js", new Date());
 
-      gtag("config", "UA-171395181-1");
+      gtag("config", "UA-171395181-2");
     </script>
 
     <!-- Device Meta -->
@@ -24,7 +24,7 @@
 
     <!-- Social Media -->
     <meta property="og:title" content="Coriyon Arrington's Portfolio" />
-    <meta property="og:image" content="images/link-share.png" />
+    <meta property="og:image" content="../images/website-preview.png" />
     <meta
       property="og:description"
       content="UX Designer based in Austin who loves clean, elegant, and practical designs."
@@ -62,7 +62,7 @@
           <nav class="overlay-content">
             <a href="../#work" onclick="anchorLink()">Work</a>
             <a
-              href="https://drive.google.com/file/d/1M7H-2m9ikijQIYVl05t4rOsxvCb0bqWX/view?usp=sharing"
+              href="https://drive.google.com/file/d/1RXZhrrxtsn3PHWiKyGr_8ga8qAIOny_9/view?usp=sharing"
               target="_blank"
               >Resume</a
             >
@@ -122,18 +122,16 @@
 
         <!-- hero -->
         <div class="hero">
-          <section class="hero-content">
+          <section class="work-example">
             <h2>Eclips Storage</h2>
             <p>
               Eclips Storage allows users to easily save, organize, and share
               all their favorite content like GIFs and videos.
             </p>
-            <div>
-              <img
-                src="../images/case-study-example-3.png"
-                alt="app screenshots"
-              />
-            </div>
+            <img
+              src="../images/eclips-storage-example-1.png"
+              alt="app screenshots"
+            />
             <a
               href="https://www.figma.com/proto/FJ9Vb8gAfj0sWk7hQT8lwo/UX-Intensive?node-id=180%3A945&viewport=62%2C365%2C0.021977005526423454&scaling=scale-down&hide-ui=1"
               target="_blank"
@@ -184,8 +182,6 @@
 
         <!-- summary -->
         <section id="summary">
-          <h2>Summary</h2>
-
           <!-- problem -->
           <section class="project">
             <h3>The Problem</h3>
@@ -210,7 +206,7 @@
         <section class="final-product">
           <div class="project-example">
             <img
-              src="../images/case-study-example-2.png"
+              src="../images/eclips-storage-example-2.png"
               alt="app screenshots"
             />
           </div>
@@ -237,7 +233,8 @@
               This helped me to see that most people use more than one app
               likely because they use them for different purposes. More
               importantly, it helped me prioritize what features to include for
-              a minimum viable prototype - mobile upload & sharing an item.
+              a minimum viable prototype - mobile upload & sharing an item. All
+              survey results below are out of 27 participants.
             </p>
             <div class="project-example survey-highlights col2">
               <div>
@@ -262,9 +259,6 @@
                   which most applications require.
                 </p>
               </div>
-              <div>
-                <h5>Out of 27 participants</h5>
-              </div>
             </div>
             <a
               href="https://docs.google.com/document/d/1kkZdcfhDnmd6tiOVrFNEeEgXDil3y8FjTZzF75vhh1c/edit?usp=sharing"
@@ -286,14 +280,58 @@
               item. Based on the survey, most people were using Google Drive,
               Dropbox, and iCloud so I chose to start there.
             </p>
-            <div class="project-example">
-              <section class="competitors col3">
+            <div class="project-example col3">
+              <section class="competitors">
                 <img src="../images/google-drive.png" alt="Google Drive" />
-                <img src="../images/dropbox.png" alt="Dropbox" />
-                <img src="../images/icloud.png" alt="iCloud" />
                 <h4>Google Drive</h4>
-                <h4>Dropbox</h4>
+                <h4>Pros</h4>
+                <ul>
+                  <li>First 15 GB of storage are free</li>
+                  <li>Access files from any location or device</li>
+                  <li>Quickly invite others with no email attachment needed</li>
+                </ul>
+                <h4>Cons</h4>
+                <ul>
+                  <li>Harder to recover deleted files</li>
+                  <li>Requires a Google account to start</li>
+                  <li>Geared mainly towards Google users</li>
+                </ul>
+              </section>
+
+              <section class="competitors">
+                <img src="../images/icloud.png" alt="iCloud" />
                 <h4>iCloud</h4>
+                <h4>Pros</h4>
+                <ul>
+                  <li>Automatically backs up and sync</li>
+                  <li>Paid plans start at $0.99 for 50 GB</li>
+                  <li>Two-factor authentication for increased security</li>
+                </ul>
+                <h4>Cons</h4>
+                <ul>
+                  <li>Requires a iCloud account to get started</li>
+                  <li>Collaboration features are limited</li>
+                  <li>Not as easy to organize items</li>
+                </ul>
+              </section>
+
+              <section class="competitors">
+                <img src="../images/dropbox.png" alt="Dropbox" />
+                <h4>Dropbox</h4>
+                <h4>Pros</h4>
+                <ul>
+                  <li>Try free for the first 30 days</li>
+                  <li>Collaborate with others easily</li>
+                  <li>
+                    Intelligently suggests files to find what's needed faster
+                  </li>
+                </ul>
+                <h4>Cons</h4>
+                <ul>
+                  <li>Lowest plan starts at $15 per month</li>
+                  <li>Mainly geared towards businesses</li>
+                  <li>Dropbox product may not appeal to younger crowds</li>
+                </ul>
               </section>
             </div>
             <p>
@@ -320,41 +358,45 @@
             <h3>User Personas</h3>
             <p>
               User-focused design is all about remembering the user at each step
-              in the design process. So, I curated three users personas based on
-              the audience from the survey and competitors. The personas brought
-              the user to life and I referred back to them as I was designing
-              the app.
+              in the design process. So, I curated a couple of users personas
+              based on the audience from the survey and competitors. The
+              personas brought the user to life and I referred back to them as I
+              was designing the app.
             </p>
-            <div class="project-example col3">
+            <div class="project-example col2">
               <section class="persona">
                 <img src="../images/persona-tanya.png" alt="user persona" />
                 <h4>Tanya</h4>
                 <h5>27 / Graduate Student</h5>
                 <h4>Goals</h4>
-                <p></p>
-                <p></p>
+                <p>
+                  As a current graduate student, I need to be able to store tons
+                  of different articles and research papers. However, most
+                  importantly, I need a place to save my blogs and other content
+                  that help me to stay sane.
+                </p>
                 <h4>Frustrations</h4>
-                <p></p>
+                <p>
+                  My files are all over the place. I have some saved in the
+                  cloud, on my phone, and on my desktop. I need a better way!
+                </p>
               </section>
               <section class="persona">
                 <img src="../images/persona-josh.png" alt="user persona" />
                 <h4>Josh</h4>
-                <h5>22 / Content Specialist</h5>
+                <h5>25 / Software Engineer</h5>
                 <h4>Goals</h4>
-                <p></p>
-                <p></p>
+                <p>
+                  As a Software Engineer I rely heavily on the cloud. I'm always
+                  looking for effective ways to keep things together. My most
+                  important matter is security and privacy. I want a tool that
+                  is easy to use and secure.
+                </p>
                 <h4>Frustrations</h4>
-                <p></p>
-              </section>
-              <section class="persona">
-                <img src="../images/persona-morgan.png" alt="user persona" />
-                <h4>Morgan</h4>
-                <h5>22 / Content Specialist</h5>
-                <h4>Goals</h4>
-                <p></p>
-                <p></p>
-                <h4>Frustrations</h4>
-                <p></p>
+                <p>
+                  The tools I currently use are bloated down with features. I
+                  need something that is simple and effective.
+                </p>
               </section>
             </div>
           </section>
@@ -390,7 +432,10 @@
               product and accomplish those goals.
             </p>
             <div class="project-example user-flows">
-              <img src="../images/user-flows.png" alt="user-flows" />
+              <img
+                src="../images/eclips-storage-user-flows.png"
+                alt="user-flows"
+              />
             </div>
             <a
               href="https://whimsical.com/RDxYQ91ia7GC6SeUd8rEUd#7YNFXnKbYtnysZsY9NLvG"
@@ -429,7 +474,7 @@
             </p>
             <div class="project-example">
               <img
-                src="../images/digital-wireframes.png"
+                src="../images/eclips-storage-digital-wireframes.png"
                 alt="digital wireframes"
               />
             </div>
@@ -458,7 +503,10 @@
               found in modern interior design.
             </p>
             <div class="project-example">
-              <img src="../images/moodboard.png" alt="mood board" />
+              <img
+                src="../images/eclips-storage-moodboard.png"
+                alt="mood board"
+              />
             </div>
           </section>
 
@@ -478,7 +526,10 @@
               while not clashing.
             </p>
             <div class="project-example">
-              <img src="../images/color-palette.png" alt="color palette" />
+              <img
+                src="../images/eclips-storage-color-palette.png"
+                alt="color palette"
+              />
             </div>
           </section>
 
@@ -493,7 +544,10 @@
               as well. The goal is to feel familiar while also standing out
             </p>
             <div class="project-example">
-              <img src="../images/typeface.png" alt="font type" />
+              <img
+                src="../images/eclips-storage-typeface.png"
+                alt="font type"
+              />
             </div>
           </section>
 
@@ -506,7 +560,7 @@
               name.
             </p>
             <div class="project-example">
-              <img src="../images/logo-black-bg.png" alt="logo example" />
+              <img src="../images/eclips-storage-logo.png" alt="logo example" />
             </div>
             <a
               href="https://www.figma.com/proto/FJ9Vb8gAfj0sWk7hQT8lwo/UX-Intensive?node-id=585%3A21716&viewport=1216%2C991%2C0.06749442964792252&scaling=scale-down&hotspot-hints=0&hide-ui=1"
@@ -519,7 +573,7 @@
         </section>
 
         <!-- prototype and conclusion -->
-        <section>
+        <section id="prototype-conclusion">
           <!-- iterations -->
           <section class="project">
             <h2>Iterations</h2>
@@ -541,16 +595,13 @@
               It revealed some areas that needed to be corrected. For example,
               it showed me that users wanted to be able to share directly from
               the file and choose where it would go as opposed to going through
-              multiple steps.
-            </p>
-            <p>
-              I implemented the feedback from the first round of user testing,
-              added the visual design and then completed the round of user
-              testing.
+              multiple steps. I implemented the feedback from the first round of
+              user testing, added the visual design and then completed the round
+              of user testing.
             </p>
             <div class="project-example">
               <video
-                src="../videos/lofi-wireframe-share.mp4"
+                src="../videos/eclips-storage-lofi.mp4"
                 playsinline=""
                 preload="none"
                 loop=""
@@ -573,9 +624,15 @@
               The preference testing was able to clear most up that by showing
               me statistically what users prefer.
             </p>
-            <div class="project-example col2 flex-row">
-              <img src="../images/blue-button.png" alt="blue button" />
-              <img src="../images/orange-button.png" alt="orange button" />
+            <div class="project-example flex-row">
+              <img
+                src="../images/eclips-storage-preference-test-1.png"
+                alt="blue button"
+              />
+              <img
+                src="../images/eclips-storage-preference-test-2.png"
+                alt="orange button"
+              />
             </div>
           </section>
 
@@ -584,11 +641,12 @@
             <h2>Prototype</h2>
             <p>
               Below is the final version based on all the user feedback. Please
-              feel free to check it out!
+              feel free to check it out and don't hesitate to contact me if you
+              would like to discuss.
             </p>
             <div class="project-example">
               <video
-                src="../videos/hifi-mockup-share.mp4"
+                src="../videos/eclips-storage-hifi.mp4"
                 playsinline=""
                 preload="none"
                 loop=""
@@ -652,14 +710,14 @@
             </p>
             <a href="/work/findblack.html">
               <button type="button" class="primary">
-                Next Project - FindBlack
+                Previous Project - FindBlack
               </button>
             </a>
           </section>
         </section>
 
         <!-- this section holds the contact me info -->
-        <section id="contact" class="contact">
+        <section id="contact" class="contact col2">
           <h1>Please, say hi.</h1>
           <h4>
             Thank you for stopping by. If you’d like to chat or work on
